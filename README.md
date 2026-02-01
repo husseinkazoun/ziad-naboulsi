@@ -1,73 +1,87 @@
-# Welcome to your Lovable project
+# Ziad Naboulsi — Video Editor & Director
 
-## Project info
+A minimal, cinematic portfolio showcasing video editing, directing, and production work across commercial, broadcast, and independent film.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+![Portfolio Preview](src/assets/hero-bg.jpg)
 
-## How can I edit this code?
+## 🎬 About
 
-There are several ways of editing your application.
+This portfolio presents selected work for clients including SSC, Milq Records, Wings for Hope, Advert Communications, and LBC. Based in Beirut, Lebanon.
 
-**Use Lovable**
+**Services:**
+- Video Editing (Short & Long Form)
+- Directing & Camera Operation
+- Color Grading
+- Motion Graphics
+- Sound Design
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## 🛠 Tech Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+- **Framework:** React 18 + TypeScript
+- **Styling:** Tailwind CSS
+- **Animations:** Framer Motion
+- **Routing:** React Router
+- **UI Components:** shadcn/ui
+- **Build Tool:** Vite
 
-**Use your preferred IDE**
+## 🚀 Getting Started
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
+```bash
+# Clone the repository
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
+# Navigate to project
 cd <YOUR_PROJECT_NAME>
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## 📁 Project Structure
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```
+src/
+├── assets/          # Images, thumbnails, stills
+├── components/      # Reusable UI components
+├── data/            # Project data and content
+├── pages/           # Route pages (Home, Work, About, Contact)
+└── hooks/           # Custom React hooks
+```
 
-**Use GitHub Codespaces**
+## 📝 Updating Content
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Projects
+Edit `src/data/projects.ts` to add or modify portfolio pieces:
 
-## What technologies are used for this project?
+```typescript
+{
+  id: "project-slug",
+  title: "Project Title",
+  category: "commercial" | "social" | "broadcast" | "film",
+  thumbnail: thumbnailImage,
+  videoUrl: "https://vimeo.com/...",
+  description: "Project description.",
+  role: "Director / Editor",
+  year: "2024",
+  deliverables: "Hero Film • Social Package",
+}
+```
 
-This project is built with:
+### Thumbnails
+Replace images in `src/assets/` with actual frames from your videos. Use 16:9 aspect ratio for consistency.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Showreel
+Update the Vimeo embed URL in `src/pages/Index.tsx` (search for `player.vimeo.com`).
 
-## How can I deploy this project?
+## 📧 Contact
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+- **Email:** [your-email]
+- **WhatsApp:** +961 70 664 916
+- **Location:** Beirut, Lebanon
 
-## Can I connect a custom domain to my Lovable project?
+## 📄 License
 
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+© 2024 Ziad Naboulsi. All rights reserved.
