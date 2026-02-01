@@ -17,31 +17,31 @@ const Header = () => {
   const isActive = (href: string) => location.pathname === href;
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-sm border-b border-border">
       <div className="container mx-auto px-6 lg:px-12">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link
             to="/"
-            className="font-heading text-xl lg:text-2xl font-bold tracking-tight hover:text-accent transition-colors"
+            className="font-heading text-lg lg:text-xl font-bold tracking-tight"
           >
             ZIAD NABOULSI
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-10">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 to={link.href}
-                className={`text-sm font-medium transition-colors hover:text-foreground ${
+                className={`text-sm transition-colors hover:text-foreground ${
                   isActive(link.href) ? "text-foreground" : "text-muted-foreground"
                 }`}
               >
                 {link.label}
               </Link>
             ))}
-            <Button asChild size="sm" className="bg-accent text-accent-foreground hover:bg-accent/90">
+            <Button asChild variant="outline" size="sm">
               <Link to="/contact">Request a Quote</Link>
             </Button>
           </nav>
@@ -52,7 +52,7 @@ const Header = () => {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
       </div>
@@ -64,22 +64,23 @@ const Header = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden border-t border-border/50 bg-background"
+            transition={{ duration: 0.2 }}
+            className="md:hidden border-t border-border bg-background"
           >
-            <nav className="container mx-auto px-6 py-6 flex flex-col gap-4">
+            <nav className="container mx-auto px-6 py-8 flex flex-col gap-5">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   to={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`text-lg font-medium transition-colors ${
+                  className={`text-base transition-colors ${
                     isActive(link.href) ? "text-foreground" : "text-muted-foreground"
                   }`}
                 >
                   {link.label}
                 </Link>
               ))}
-              <Button asChild className="mt-2 bg-accent text-accent-foreground hover:bg-accent/90">
+              <Button asChild variant="outline" className="mt-3">
                 <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>
                   Request a Quote
                 </Link>

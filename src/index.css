@@ -2,42 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Ziad Naboulsi Portfolio — Dark Cinematic Design System */
+/* Ziad Naboulsi Portfolio — Cinematic Gallery Design System */
 
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
 
 @layer base {
   :root {
-    /* Dark cinematic palette */
-    --background: 220 20% 6%;
-    --foreground: 0 0% 95%;
+    /* Premium monochrome palette */
+    --background: 220 15% 8%;
+    --foreground: 40 10% 92%;
 
-    --card: 220 18% 10%;
-    --card-foreground: 0 0% 95%;
+    --card: 220 12% 11%;
+    --card-foreground: 40 10% 92%;
 
-    --popover: 220 18% 10%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 220 12% 11%;
+    --popover-foreground: 40 10% 92%;
 
-    --primary: 0 0% 95%;
-    --primary-foreground: 220 20% 6%;
+    --primary: 40 10% 92%;
+    --primary-foreground: 220 15% 8%;
 
-    --secondary: 220 15% 16%;
-    --secondary-foreground: 0 0% 85%;
+    --secondary: 220 10% 14%;
+    --secondary-foreground: 40 8% 75%;
 
-    --muted: 220 15% 16%;
-    --muted-foreground: 220 10% 55%;
+    --muted: 220 10% 14%;
+    --muted-foreground: 220 8% 50%;
 
-    --accent: 35 100% 55%;
-    --accent-foreground: 220 20% 6%;
+    /* Muted warm accent - understated */
+    --accent: 35 15% 45%;
+    --accent-foreground: 40 10% 92%;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 95%;
+    --destructive: 0 50% 45%;
+    --destructive-foreground: 40 10% 92%;
 
-    --border: 220 15% 20%;
-    --input: 220 15% 20%;
-    --ring: 35 100% 55%;
+    --border: 220 10% 18%;
+    --input: 220 10% 18%;
+    --ring: 220 8% 40%;
 
-    --radius: 0.5rem;
+    /* Reduced radius */
+    --radius: 0.375rem;
 
     /* Typography */
     --font-heading: 'Space Grotesk', sans-serif;
@@ -45,25 +47,25 @@
   }
 
   .dark {
-    --background: 220 20% 6%;
-    --foreground: 0 0% 95%;
-    --card: 220 18% 10%;
-    --card-foreground: 0 0% 95%;
-    --popover: 220 18% 10%;
-    --popover-foreground: 0 0% 95%;
-    --primary: 0 0% 95%;
-    --primary-foreground: 220 20% 6%;
-    --secondary: 220 15% 16%;
-    --secondary-foreground: 0 0% 85%;
-    --muted: 220 15% 16%;
-    --muted-foreground: 220 10% 55%;
-    --accent: 35 100% 55%;
-    --accent-foreground: 220 20% 6%;
-    --destructive: 0 62% 30%;
-    --destructive-foreground: 0 0% 95%;
-    --border: 220 15% 20%;
-    --input: 220 15% 20%;
-    --ring: 35 100% 55%;
+    --background: 220 15% 8%;
+    --foreground: 40 10% 92%;
+    --card: 220 12% 11%;
+    --card-foreground: 40 10% 92%;
+    --popover: 220 12% 11%;
+    --popover-foreground: 40 10% 92%;
+    --primary: 40 10% 92%;
+    --primary-foreground: 220 15% 8%;
+    --secondary: 220 10% 14%;
+    --secondary-foreground: 40 8% 75%;
+    --muted: 220 10% 14%;
+    --muted-foreground: 220 8% 50%;
+    --accent: 35 15% 45%;
+    --accent-foreground: 40 10% 92%;
+    --destructive: 0 50% 40%;
+    --destructive-foreground: 40 10% 92%;
+    --border: 220 10% 18%;
+    --input: 220 10% 18%;
+    --ring: 220 8% 40%;
   }
 }
 
@@ -85,20 +87,21 @@
     font-family: var(--font-heading);
     @apply font-bold tracking-tight;
   }
+
+  /* Subtle underline links */
+  a.link-underline {
+    @apply underline-offset-4 decoration-muted-foreground/40 hover:decoration-foreground transition-colors;
+  }
 }
 
-/* Animation utilities */
+/* Minimal animation utilities */
 @layer utilities {
   .animate-fade-in {
-    animation: fadeIn 0.6s ease-out forwards;
+    animation: fadeIn 0.4s ease-out forwards;
   }
 
   .animate-fade-in-up {
-    animation: fadeInUp 0.6s ease-out forwards;
-  }
-
-  .animate-slide-in {
-    animation: slideIn 0.4s ease-out forwards;
+    animation: fadeInUp 0.4s ease-out forwards;
   }
 }
 
@@ -114,21 +117,10 @@
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(12px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateX(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
   }
 }
