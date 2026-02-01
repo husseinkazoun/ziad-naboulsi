@@ -136,7 +136,7 @@ I believe in the power of visual storytelling to create meaningful experiences.<
 
       {/* Showreel Section */}
       <section className="py-12 lg:py-16 bg-secondary/30">
-        <div className="max-w-7xl mx-auto px-4 lg:px-8">
+        <div className="container mx-auto px-6 lg:px-12 max-w-4xl">
           <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-center justify-center">
             {/* Left Video Panel - 80% */}
             <motion.div initial={{
