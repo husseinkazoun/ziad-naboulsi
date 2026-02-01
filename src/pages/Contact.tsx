@@ -27,7 +27,46 @@ const Contact = () => {
         description="Get in touch with Ziad Naboulsi for video production, editing projects, or collaborations. Based in Lebanon, working globally."
       />
 
-      <section className="py-24">
+      {/* CTA Hero */}
+      <section className="py-24 lg:py-32">
+        <div className="container mx-auto px-6 lg:px-8 max-w-5xl">
+          <motion.div initial={{
+          opacity: 0,
+          y: 20
+        }} whileInView={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          duration: 0.5
+        }} viewport={{
+          once: true
+        }} className="text-center max-w-xl mx-auto">
+            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-5">
+              Let's Work Together
+            </h2>
+            <p className="text-muted-foreground mb-10">
+              Have a project in mind? I'm available for commercial work,
+              long-form content, and creative collaborations.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Button asChild variant="outline" size="lg" className="h-12 px-8">
+                <a href="#contact-form">Send a Message</a>
+              </Button>
+              <Button asChild variant="ghost" size="lg" className="h-12 px-8">
+                <a href="https://wa.me/96170664916" target="_blank" rel="noopener noreferrer">
+                  WhatsApp →
+                </a>
+              </Button>
+            </div>
+            <p className="mt-6 text-xs text-muted-foreground/60">
+              Typical reply within 24 hours
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Contact Form Section */}
+      <section id="contact-form" className="py-24 bg-secondary/30">
         <div className="container mx-auto px-6 lg:px-12">
           {/* Header */}
           <motion.div
@@ -36,15 +75,11 @@ const Contact = () => {
             transition={{ duration: 0.4 }}
             className="max-w-2xl mb-16"
           >
-            <h1 className="font-heading text-5xl md:text-6xl font-bold mb-6">
-              Let's Work Together
-            </h1>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-6">
+              Get in Touch
+            </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Have a project in mind? I'd love to hear about it. Drop me a message and 
-              let's create something memorable.
-            </p>
-            <p className="mt-4 text-sm text-muted-foreground">
-              I typically respond within 24 hours
+              Fill out the form below and I'll get back to you as soon as possible.
             </p>
           </motion.div>
 
