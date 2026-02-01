@@ -137,7 +137,7 @@ I believe in the power of visual storytelling to create meaningful experiences.<
       {/* Showreel Section */}
       <section className="py-12 lg:py-16 bg-secondary/30">
         <div className="container mx-auto px-6 lg:px-12 max-w-4xl">
-          <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-center justify-center">
+          <div className="flex flex-col gap-6 lg:gap-8">
             {/* Left Video Panel - 80% */}
             <motion.div initial={{
             opacity: 0,
@@ -149,7 +149,7 @@ I believe in the power of visual storytelling to create meaningful experiences.<
             duration: 0.5
           }} viewport={{
             once: true
-          }} className="lg:w-[65%] rounded-lg overflow-hidden bg-secondary shadow-2xl">
+          }} className="w-full rounded-lg overflow-hidden bg-secondary shadow-2xl">
               <div style={{
               padding: "52.78% 0 0 0",
               position: "relative"
@@ -176,7 +176,7 @@ I believe in the power of visual storytelling to create meaningful experiences.<
             delay: 0.1
           }} viewport={{
             once: true
-          }} className="lg:w-[35%] flex flex-col justify-center lg:pl-6">
+          }} className="w-full">
               <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-3">
                 Showreel
               </p>
