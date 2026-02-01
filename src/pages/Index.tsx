@@ -30,7 +30,7 @@ const Index = () => {
         <div className="absolute inset-0 bg-background/80" />
 
         <div className="container mx-auto px-6 lg:px-8 py-20 relative z-10 max-w-6xl">
-          <div className="max-w-3xl">
+          <div className="max-w-3xl text-left">
             <motion.p initial={{
             opacity: 0,
             y: 10
