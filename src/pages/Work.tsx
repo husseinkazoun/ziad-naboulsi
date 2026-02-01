@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
 import VideoCard from "@/components/VideoCard";
-import { getProjectsByCategory } from "@/data/projects";
+import { projects, clients, getProjectsByCategory } from "@/data/projects";
 
 const categories = [
   { id: "all", label: "All" },
@@ -17,9 +18,15 @@ const Work = () => {
   const [activeCategory, setActiveCategory] = useState("all");
   const filteredProjects = getProjectsByCategory(activeCategory);
 
-  // Separate standard and vertical projects
+  // Get projects for sections
+  const allProjects = projects;
+  const featuredProjects = allProjects.slice(0, 3);
+  const moreProjects = allProjects.filter(p => !p.isVertical).slice(3, 7);
+  const verticalReels = allProjects.filter(p => p.isVertical);
+
+  // Separate standard and vertical projects for filter view
   const standardProjects = filteredProjects.filter((p) => !p.isVertical);
-  const verticalProjects = filteredProjects.filter((p) => p.isVertical);
+  const verticalProjectsFiltered = filteredProjects.filter((p) => p.isVertical);
 
   return (
     <Layout>
@@ -28,6 +35,163 @@ const Work = () => {
         description="Explore a curated selection of video projects including commercials, social media content, broadcast work, and independent films."
       />
 
+      {/* Featured Work Section */}
+      <section className="py-20 lg:py-28">
+        <div className="container mx-auto px-6 lg:px-8 max-w-6xl">
+          <div className="flex items-end justify-between mb-12 lg:mb-16">
+            <div>
+              <motion.p initial={{
+                opacity: 0,
+                y: 10
+              }} whileInView={{
+                opacity: 1,
+                y: 0
+              }} transition={{
+                duration: 0.4
+              }} viewport={{
+                once: true
+              }} className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground mb-3">
+                Portfolio
+              </motion.p>
+              <motion.h2 initial={{
+                opacity: 0,
+                y: 10
+              }} whileInView={{
+                opacity: 1,
+                y: 0
+              }} transition={{
+                duration: 0.4,
+                delay: 0.05
+              }} viewport={{
+                once: true
+              }} className="font-heading text-3xl md:text-4xl font-bold">
+                Featured Work
+              </motion.h2>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
+            {featuredProjects.map((project, index) => (
+              <VideoCard
+                key={project.id}
+                title={project.title}
+                role={project.role}
+                vimeoId={project.vimeoId}
+                thumbnail={project.thumbnail}
+                index={index}
+                isFeatured
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Clients */}
+      <section className="py-16 lg:py-20 border-y border-border/50 bg-secondary/20">
+        <div className="container mx-auto px-6 lg:px-8 max-w-6xl">
+          <motion.div initial={{
+            opacity: 0
+          }} whileInView={{
+            opacity: 1
+          }} transition={{
+            duration: 0.5
+          }} viewport={{
+            once: true
+          }}>
+            <p className="text-[10px] font-medium uppercase tracking-[0.25em] text-muted-foreground/70 text-center mb-10">
+              Trusted By
+            </p>
+            <div className="flex flex-wrap justify-center items-center gap-x-10 gap-y-4 lg:gap-x-14">
+              {clients.map((client, index) => (
+                <span
+                  key={index}
+                  className="text-xs font-heading font-medium text-muted-foreground/80 uppercase tracking-wider hover:text-foreground transition-colors"
+                >
+                  {client}
+                </span>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* More Work */}
+      <section className="py-20 lg:py-28">
+        <div className="container mx-auto px-6 lg:px-8 max-w-6xl">
+          <motion.div initial={{
+            opacity: 0,
+            y: 10
+          }} whileInView={{
+            opacity: 1,
+            y: 0
+          }} transition={{
+            duration: 0.4
+          }} viewport={{
+            once: true
+          }} className="text-center mb-12 lg:mb-16">
+            <h2 className="font-heading text-2xl md:text-3xl font-bold mb-4">More Work</h2>
+            <p className="text-sm text-muted-foreground max-w-md mx-auto">
+              Commercial, broadcast, and film projects.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+            {moreProjects.map((project, index) => (
+              <VideoCard
+                key={project.id}
+                title={project.title}
+                role={project.role}
+                vimeoId={project.vimeoId}
+                thumbnail={project.thumbnail}
+                index={index}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Vertical Reels Section */}
+      {verticalReels.length > 0 && (
+        <section className="py-20 lg:py-28 bg-secondary/30">
+          <div className="container mx-auto px-6 lg:px-8 max-w-4xl">
+            <motion.div initial={{
+              opacity: 0,
+              y: 10
+            }} whileInView={{
+              opacity: 1,
+              y: 0
+            }} transition={{
+              duration: 0.4
+            }} viewport={{
+              once: true
+            }} className="text-center mb-12 lg:mb-16">
+              <p className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground mb-3">
+                Social
+              </p>
+              <h2 className="font-heading text-2xl md:text-3xl font-bold mb-4">Vertical Reels</h2>
+              <p className="text-sm text-muted-foreground max-w-md mx-auto">
+                Short-form content for Instagram, TikTok, and YouTube Shorts.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-2 gap-6 lg:gap-8 max-w-xl mx-auto">
+              {verticalReels.map((project, index) => (
+                <VideoCard
+                  key={project.id}
+                  title={project.title}
+                  role={project.role}
+                  vimeoId={project.vimeoId}
+                  thumbnail={project.thumbnail}
+                  index={index}
+                  isVertical
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* All Work - Filterable */}
       <section className="py-24">
         <div className="container mx-auto px-6 lg:px-12">
           {/* Header */}
@@ -37,7 +201,7 @@ const Work = () => {
             transition={{ duration: 0.4 }}
             className="mb-16"
           >
-            <h1 className="font-heading text-5xl md:text-6xl font-bold">Work</h1>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold">All Work</h2>
             <p className="mt-6 text-lg text-muted-foreground max-w-2xl leading-relaxed">
               A collection of projects spanning commercials, social content, broadcast productions,
               and independent films. Each piece crafted with intention.
@@ -83,11 +247,11 @@ const Work = () => {
           )}
 
           {/* Vertical Projects Grid (9:16) */}
-          {verticalProjects.length > 0 && (
+          {verticalProjectsFiltered.length > 0 && (
             <div className="mt-16">
-              <h2 className="font-heading text-xl font-semibold mb-8">Social Reels</h2>
+              <h3 className="font-heading text-xl font-semibold mb-8">Social Reels</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 max-w-4xl">
-                {verticalProjects.map((project, index) => (
+                {verticalProjectsFiltered.map((project, index) => (
                   <VideoCard
                     key={project.id}
                     title={project.title}
