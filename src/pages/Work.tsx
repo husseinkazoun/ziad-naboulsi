@@ -178,7 +178,7 @@ const Work = () => {
         </div>
       </section>
 
-      {/* Clients */}
+      {/* Projects */}
       <section className="py-16 lg:py-20 border-y border-border/50 bg-secondary/20">
         <div className="container mx-auto px-6 lg:px-8 max-w-6xl">
           <motion.div initial={{
@@ -193,67 +193,82 @@ const Work = () => {
             <p className="text-[10px] font-medium uppercase tracking-[0.25em] text-muted-foreground/70 text-center mb-10">
               Projects
             </p>
-            <div className="flex flex-wrap justify-center items-center gap-x-10 gap-y-4 lg:gap-x-14">
-              {clientVideos.map((client, index) => (
-                <button
-                  key={index}
-                  onClick={() => setActiveClient(activeClient === client.name ? null : client.name)}
-                  className={`text-xs font-heading font-medium uppercase tracking-wider transition-colors ${
-                    activeClient === client.name 
-                      ? "text-foreground" 
-                      : "text-muted-foreground/80 hover:text-foreground"
-                  }`}
-                >
-                  {client.name}
-                </button>
-              ))}
-            </div>
 
-            {/* Video Panel */}
-            <AnimatePresence>
-              {activeClientVideo && (
+            <AnimatePresence mode="wait">
+              {!activeClientVideo ? (
                 <motion.div
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: "auto" }}
-                  exit={{ opacity: 0, height: 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="overflow-hidden"
+                  key="thumbnails"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                  className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 lg:gap-6"
                 >
-                  <div className="mt-10 flex flex-col items-center">
-                    <div 
-                      className="relative rounded-lg overflow-hidden bg-secondary shadow-xl"
-                      style={{
-                        width: `min(92vw, calc(85vh * ${activeAspectRatio}))`,
-                        aspectRatio: `${activeAspectRatio}`,
-                      }}
+                  {clientVideos.map((client, index) => (
+                    <motion.button
+                      key={index}
+                      onClick={() => setActiveClient(client.name)}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.3, delay: index * 0.05 }}
+                      className="group flex flex-col items-center gap-2"
                     >
-                      <button
-                        onClick={() => setActiveClient(null)}
-                        className="absolute top-4 right-4 z-10 p-2 bg-background/80 rounded-full hover:bg-background transition-colors"
-                      >
-                        <X className="w-4 h-4" />
-                      </button>
-                      <iframe
-                        src={`https://player.vimeo.com/video/${activeClientVideo.vimeoId}?title=0&byline=0&portrait=0&badge=0&autopause=0&autoplay=1&player_id=0&app_id=58479`}
-                        frameBorder="0"
-                        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-                        referrerPolicy="strict-origin-when-cross-origin"
-                        className="absolute inset-0 w-full h-full"
-                        title={activeClientVideo.name}
-                      />
-                    </div>
-                    <div className="mt-4 flex items-center justify-between w-full max-w-md">
-                      <p className="text-sm font-medium">{activeClientVideo.name}</p>
-                      <a
-                        href={`https://vimeo.com/${activeClientVideo.vimeoId}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-                      >
-                        Watch on Vimeo
-                        <ArrowRight className="w-4 h-4" />
-                      </a>
-                    </div>
+                      <div className="relative w-full aspect-video rounded-md overflow-hidden bg-secondary shadow-md group-hover:shadow-lg transition-shadow">
+                        <img
+                          src={client.thumbnail}
+                          alt={client.name}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                        <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/10 transition-colors" />
+                      </div>
+                      <p className="text-[10px] font-heading font-medium uppercase tracking-wider text-muted-foreground group-hover:text-foreground transition-colors text-center">
+                        {client.name}
+                      </p>
+                    </motion.button>
+                  ))}
+                </motion.div>
+              ) : (
+                <motion.div
+                  key="video"
+                  initial={{ opacity: 0, scale: 0.98 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.98 }}
+                  transition={{ duration: 0.3 }}
+                  className="flex flex-col items-center"
+                >
+                  <div 
+                    className="relative rounded-lg overflow-hidden bg-secondary shadow-xl"
+                    style={{
+                      width: `min(92vw, calc(85vh * ${activeAspectRatio}))`,
+                      aspectRatio: `${activeAspectRatio}`,
+                    }}
+                  >
+                    <button
+                      onClick={() => setActiveClient(null)}
+                      className="absolute top-4 right-4 z-10 p-2 bg-background/80 rounded-full hover:bg-background transition-colors"
+                    >
+                      <X className="w-4 h-4" />
+                    </button>
+                    <iframe
+                      src={`https://player.vimeo.com/video/${activeClientVideo.vimeoId}?title=0&byline=0&portrait=0&badge=0&autopause=0&autoplay=1&player_id=0&app_id=58479`}
+                      frameBorder="0"
+                      allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                      referrerPolicy="strict-origin-when-cross-origin"
+                      className="absolute inset-0 w-full h-full"
+                      title={activeClientVideo.name}
+                    />
+                  </div>
+                  <div className="mt-4 flex items-center justify-between w-full max-w-md">
+                    <p className="text-sm font-medium">{activeClientVideo.name}</p>
+                    <a
+                      href={`https://vimeo.com/${activeClientVideo.vimeoId}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    >
+                      Watch on Vimeo
+                      <ArrowRight className="w-4 h-4" />
+                    </a>
                   </div>
                 </motion.div>
               )}
