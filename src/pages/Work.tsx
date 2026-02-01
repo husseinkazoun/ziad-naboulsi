@@ -194,6 +194,23 @@ const Work = () => {
               Projects
             </p>
 
+            {/* Selection Bar - Always visible */}
+            <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-3 lg:gap-x-12 mb-8">
+              {clientVideos.map((client, index) => (
+                <button
+                  key={index}
+                  onClick={() => setActiveClient(activeClient === client.name ? null : client.name)}
+                  className={`text-xs font-heading font-medium uppercase tracking-wider transition-colors ${
+                    activeClient === client.name 
+                      ? "text-foreground" 
+                      : "text-muted-foreground/80 hover:text-foreground"
+                  }`}
+                >
+                  {client.name}
+                </button>
+              ))}
+            </div>
+
             <AnimatePresence mode="wait">
               {!activeClientVideo ? (
                 <motion.div
@@ -221,9 +238,6 @@ const Work = () => {
                         />
                         <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/10 transition-colors" />
                       </div>
-                      <p className="text-[10px] font-heading font-medium uppercase tracking-wider text-muted-foreground group-hover:text-foreground transition-colors text-center">
-                        {client.name}
-                      </p>
                     </motion.button>
                   ))}
                 </motion.div>
