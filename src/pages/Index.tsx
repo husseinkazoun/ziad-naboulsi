@@ -37,27 +37,47 @@ const Index = () => {
         <div className="absolute inset-0 bg-background/80" />
 
         <div className="container mx-auto px-6 lg:px-8 py-20 relative z-10 max-w-6xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="max-w-3xl"
-          >
-            <p className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground/70 mb-4">
+          <div className="max-w-3xl">
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0, ease: [0.22, 1, 0.36, 1] }}
+              className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground/70 mb-4"
+            >
               Ziad Naboulsi
-            </p>
-            <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl font-bold leading-[0.92] tracking-tight">
+            </motion.p>
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+              className="font-heading text-4xl md:text-6xl lg:text-7xl font-bold leading-[0.92] tracking-tight"
+            >
               Video Editor &
               <br />
               <span className="text-muted-foreground">Director</span>
-            </h1>
-            <p className="mt-8 text-base md:text-lg text-foreground/80 max-w-xl leading-relaxed">
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
+              className="mt-8 text-base md:text-lg text-foreground/80 max-w-xl leading-relaxed"
+            >
               Crafting visual stories for brands, broadcasters, and filmmakers. From concept to final cut—commercials, documentaries, and everything in between.
-            </p>
-            <p className="mt-4 text-sm text-muted-foreground max-w-xl leading-relaxed">
+            </motion.p>
+            <motion.p
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              className="mt-4 text-sm text-muted-foreground max-w-xl leading-relaxed"
+            >
               Based in Beirut, working across the MENA region with clients in Lebanon, Saudi Arabia, and the UAE.
-            </p>
-            <div className="mt-10 flex flex-wrap gap-4">
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.65, ease: [0.22, 1, 0.36, 1] }}
+              className="mt-10 flex flex-wrap gap-4"
+            >
               <Button asChild size="lg" variant="outline" className="gap-2 h-12 px-6">
                 <Link to="/contact">
                   Request a Quote
@@ -69,8 +89,8 @@ const Index = () => {
                   WhatsApp
                 </a>
               </Button>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
