@@ -1,4 +1,4 @@
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowLeft, ArrowRight, ExternalLink } from "lucide-react";
 import Layout from "@/components/Layout";
@@ -8,7 +8,6 @@ import { getProjectById, getAdjacentProjects } from "@/data/projects";
 
 const ProjectDetail = () => {
   const { id } = useParams<{ id: string }>();
-  const navigate = useNavigate();
   const project = getProjectById(id || "");
   const { prev, next } = getAdjacentProjects(id || "");
 
@@ -16,11 +15,11 @@ const ProjectDetail = () => {
     return (
       <Layout>
         <SEO title="Project Not Found" />
-        <div className="py-20 text-center">
-          <h1 className="font-heading text-3xl font-bold mb-4">Project Not Found</h1>
-          <Button asChild>
-            <Link to="/work">Back to Work</Link>
-          </Button>
+        <div className="py-24 text-center">
+          <h1 className="font-heading text-3xl font-bold mb-6">Project Not Found</h1>
+          <Link to="/work" className="text-sm hover:underline underline-offset-4">
+            ← Back to Work
+          </Link>
         </div>
       </Layout>
     );
@@ -40,17 +39,17 @@ const ProjectDetail = () => {
         description={project.description}
       />
 
-      <article className="py-20">
+      <article className="py-24">
         <div className="container mx-auto px-6 lg:px-12">
           {/* Back Link */}
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
+            initial={{ opacity: 0, x: -12 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.4 }}
+            transition={{ duration: 0.3 }}
           >
             <Link
               to="/work"
-              className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-8"
+              className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-10"
             >
               <ArrowLeft className="w-4 h-4" />
               Back to Work
@@ -59,15 +58,15 @@ const ProjectDetail = () => {
 
           {/* Header */}
           <motion.header
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="mb-10"
+            transition={{ duration: 0.4 }}
+            className="mb-12"
           >
-            <span className="text-sm font-medium text-accent uppercase tracking-wider">
+            <p className="text-xs font-medium text-muted-foreground uppercase tracking-widest mb-3">
               {categoryLabels[project.category]}
-            </span>
-            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mt-2">
+            </p>
+            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold">
               {project.title}
             </h1>
             <p className="mt-4 text-muted-foreground">
@@ -77,10 +76,10 @@ const ProjectDetail = () => {
 
           {/* Video Embed Area */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="relative aspect-video bg-secondary rounded-xl overflow-hidden mb-10"
+            transition={{ duration: 0.4, delay: 0.05 }}
+            className="relative aspect-video bg-secondary rounded-md overflow-hidden mb-12"
           >
             <div className="absolute inset-0 flex items-center justify-center">
               <Button asChild variant="outline" size="lg">
@@ -99,38 +98,38 @@ const ProjectDetail = () => {
 
           {/* Description */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
             className="max-w-3xl"
           >
-            <h2 className="font-heading text-xl font-semibold mb-4">About This Project</h2>
+            <h2 className="font-heading text-lg font-semibold mb-4">About This Project</h2>
             <p className="text-muted-foreground leading-relaxed">{project.description}</p>
 
             {project.credits && (
-              <div className="mt-8 pt-8 border-t border-border">
-                <h3 className="font-heading text-lg font-semibold mb-3">Credits</h3>
-                <p className="text-muted-foreground">{project.credits}</p>
+              <div className="mt-10 pt-10 border-t border-border">
+                <h3 className="font-heading text-base font-semibold mb-3">Credits</h3>
+                <p className="text-muted-foreground text-sm">{project.credits}</p>
               </div>
             )}
           </motion.div>
 
           {/* Navigation */}
           <motion.nav
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="mt-16 pt-8 border-t border-border flex justify-between items-center"
+            transition={{ duration: 0.4, delay: 0.15 }}
+            className="mt-20 pt-10 border-t border-border flex justify-between items-center"
           >
             {prev ? (
               <Link
                 to={`/work/${prev.id}`}
                 className="group flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors"
               >
-                <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
+                <ArrowLeft className="w-4 h-4" />
                 <div>
                   <span className="text-xs uppercase tracking-wider">Previous</span>
-                  <p className="font-heading font-medium">{prev.title}</p>
+                  <p className="font-heading text-sm font-medium">{prev.title}</p>
                 </div>
               </Link>
             ) : (
@@ -144,9 +143,9 @@ const ProjectDetail = () => {
               >
                 <div>
                   <span className="text-xs uppercase tracking-wider">Next</span>
-                  <p className="font-heading font-medium">{next.title}</p>
+                  <p className="font-heading text-sm font-medium">{next.title}</p>
                 </div>
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4" />
               </Link>
             ) : (
               <div />

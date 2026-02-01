@@ -18,36 +18,37 @@ const Index = () => {
       <SEO />
 
       {/* Hero Section */}
-      <section className="min-h-[90vh] flex items-center">
-        <div className="container mx-auto px-6 lg:px-12 py-20">
+      <section className="min-h-[85vh] flex items-center">
+        <div className="container mx-auto px-6 lg:px-12 py-24">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.5 }}
             className="max-w-4xl"
           >
-            <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
+            <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.95] tracking-tight">
               Cinematic Stories
               <br />
               <span className="text-muted-foreground">That Connect</span>
             </h1>
-            <p className="mt-6 text-lg md:text-xl text-muted-foreground max-w-2xl">
+            <p className="mt-8 text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
               Videographer & Editor based in Lebanon. Crafting visual narratives for brands, 
               broadcasters, and filmmakers who want to make an impact.
             </p>
-            <div className="mt-8 flex flex-wrap gap-4">
+            <div className="mt-10 flex flex-wrap gap-4">
               <Button
                 size="lg"
+                variant="outline"
                 onClick={() => setReelPlaying(true)}
-                className="bg-accent text-accent-foreground hover:bg-accent/90"
+                className="gap-2"
               >
-                <Play className="w-4 h-4 mr-2" />
+                <Play className="w-4 h-4" />
                 Watch Reel
               </Button>
-              <Button asChild size="lg" variant="outline">
+              <Button asChild size="lg" variant="ghost" className="gap-2">
                 <Link to="/work">
                   View Work
-                  <ArrowRight className="w-4 h-4 ml-2" />
+                  <ArrowRight className="w-4 h-4" />
                 </Link>
               </Button>
             </div>
@@ -56,18 +57,18 @@ const Index = () => {
       </section>
 
       {/* Selected Work Mini-Strip */}
-      <section className="py-16 border-t border-border/50">
+      <section className="py-20 border-t border-border">
         <div className="container mx-auto px-6 lg:px-12">
-          <div className="flex items-center justify-between mb-10">
-            <h2 className="font-heading text-2xl font-semibold">Selected Work</h2>
+          <div className="flex items-center justify-between mb-12">
+            <h2 className="font-heading text-xl font-semibold">Selected Work</h2>
             <Link
               to="/work"
-              className="text-sm text-muted-foreground hover:text-accent transition-colors flex items-center gap-2"
+              className="text-sm text-muted-foreground hover:underline underline-offset-4 flex items-center gap-2"
             >
-              View All <ArrowRight className="w-4 h-4" />
+              View All
             </Link>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
             {featuredProjects.map((project, index) => (
               <ProjectCard key={project.id} project={project} index={index} />
             ))}
@@ -76,14 +77,14 @@ const Index = () => {
       </section>
 
       {/* Showreel Section */}
-      <section className="py-20 bg-secondary/30">
+      <section className="py-24 bg-secondary/40">
         <div className="container mx-auto px-6 lg:px-12">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.4 }}
             viewport={{ once: true }}
-            className="relative aspect-video max-w-5xl mx-auto rounded-xl overflow-hidden bg-secondary"
+            className="relative aspect-video max-w-5xl mx-auto rounded-md overflow-hidden bg-secondary"
           >
             {reelPlaying ? (
               <iframe
@@ -97,11 +98,10 @@ const Index = () => {
                 onClick={() => setReelPlaying(true)}
                 className="absolute inset-0 w-full h-full flex items-center justify-center group"
               >
-                <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
-                <div className="relative z-10 w-20 h-20 rounded-full bg-accent flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <Play className="w-8 h-8 text-accent-foreground ml-1" />
+                <div className="relative z-10 w-16 h-16 rounded-full border border-foreground/30 flex items-center justify-center group-hover:border-foreground/60 transition-colors">
+                  <Play className="w-6 h-6 text-foreground ml-0.5" />
                 </div>
-                <span className="absolute bottom-8 left-8 font-heading text-2xl font-semibold">
+                <span className="absolute bottom-8 left-8 font-heading text-xl font-semibold">
                   2024 Showreel
                 </span>
               </button>
@@ -111,22 +111,22 @@ const Index = () => {
       </section>
 
       {/* Clients Section */}
-      <section className="py-16 border-t border-border/50">
+      <section className="py-20 border-t border-border">
         <div className="container mx-auto px-6 lg:px-12">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.4 }}
             viewport={{ once: true }}
           >
-            <h2 className="font-heading text-sm font-semibold uppercase tracking-wider text-muted-foreground text-center mb-10">
-              Trusted by Leading Brands & Studios
-            </h2>
+            <p className="font-heading text-xs font-medium uppercase tracking-widest text-muted-foreground text-center mb-10">
+              Trusted by
+            </p>
             <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-16">
               {clients.map((client, index) => (
                 <span
                   key={index}
-                  className="text-lg font-heading font-medium text-muted-foreground/70 hover:text-foreground transition-colors"
+                  className="text-base font-heading font-medium text-muted-foreground"
                 >
                   {client}
                 </span>
@@ -137,46 +137,43 @@ const Index = () => {
       </section>
 
       {/* Full Work Grid */}
-      <section className="py-20">
+      <section className="py-24">
         <div className="container mx-auto px-6 lg:px-12">
-          <div className="text-center mb-12">
+          <div className="text-center mb-16">
             <h2 className="font-heading text-3xl md:text-4xl font-bold">More Work</h2>
-            <p className="mt-3 text-muted-foreground">
+            <p className="mt-4 text-muted-foreground max-w-lg mx-auto">
               A selection of projects across commercial, social, broadcast, and film.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
             {allProjects.map((project, index) => (
               <ProjectCard key={project.id} project={project} index={index} />
             ))}
           </div>
-          <div className="mt-12 text-center">
-            <Button asChild size="lg" variant="outline">
-              <Link to="/work">
-                View All Projects
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Link>
+          <div className="mt-16 text-center">
+            <Button asChild variant="outline" size="lg">
+              <Link to="/work">View All Projects</Link>
             </Button>
           </div>
         </div>
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-secondary/30">
+      <section className="py-24 bg-secondary/40">
         <div className="container mx-auto px-6 lg:px-12">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.4 }}
             viewport={{ once: true }}
           >
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-center mb-12">
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-center mb-16">
               Services
             </h2>
-            <div className="grid md:grid-cols-2 gap-8 lg:gap-16 max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-12 lg:gap-20 max-w-4xl mx-auto">
               <div>
-                <h3 className="font-heading text-xl font-semibold mb-4">Post-Production</h3>
-                <ul className="space-y-2 text-muted-foreground">
+                <h3 className="font-heading text-lg font-semibold mb-5">Post-Production</h3>
+                <ul className="space-y-3 text-muted-foreground text-sm">
                   <li>Video Editing (Short & Long Form)</li>
                   <li>Color Grading</li>
                   <li>Motion Graphics</li>
@@ -185,8 +182,8 @@ const Index = () => {
                 </ul>
               </div>
               <div>
-                <h3 className="font-heading text-xl font-semibold mb-4">Production</h3>
-                <ul className="space-y-2 text-muted-foreground">
+                <h3 className="font-heading text-lg font-semibold mb-5">Production</h3>
+                <ul className="space-y-3 text-muted-foreground text-sm">
                   <li>Directing</li>
                   <li>Camera Operation</li>
                   <li>Lighting & Grip</li>
@@ -200,62 +197,57 @@ const Index = () => {
       </section>
 
       {/* About Teaser */}
-      <section className="py-20">
+      <section className="py-24">
         <div className="container mx-auto px-6 lg:px-12">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.4 }}
             viewport={{ once: true }}
             className="max-w-3xl mx-auto text-center"
           >
-            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-8">
               The Storyteller Behind the Lens
             </h2>
-            <p className="text-lg text-muted-foreground mb-8">
+            <p className="text-lg text-muted-foreground mb-10 leading-relaxed">
               With years of experience across commercial, broadcast, and independent film, 
               I bring a cinematic eye and meticulous craft to every project. Based in Beirut, 
               working globally.
             </p>
-            <Button asChild variant="outline" size="lg">
-              <Link to="/about">
-                More About Me
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Link>
-            </Button>
+            <Link
+              to="/about"
+              className="text-sm font-medium hover:underline underline-offset-4"
+            >
+              More About Me →
+            </Link>
           </motion.div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-accent">
+      <section className="py-24 border-t border-border">
         <div className="container mx-auto px-6 lg:px-12">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.4 }}
             viewport={{ once: true }}
-            className="text-center"
+            className="text-center max-w-2xl mx-auto"
           >
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-accent-foreground mb-4">
+            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-6">
               Let's Build Your Next Video
             </h2>
-            <p className="text-accent-foreground/80 mb-8 max-w-xl mx-auto">
+            <p className="text-muted-foreground mb-10">
               Whether it's a brand campaign, social content, or a passion project — 
               I'm ready to bring your vision to life.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Button asChild size="lg" variant="secondary">
+              <Button asChild variant="outline" size="lg">
                 <Link to="/contact">Get in Touch</Link>
               </Button>
-              <Button
-                asChild
-                size="lg"
-                variant="outline"
-                className="border-accent-foreground/30 text-accent-foreground hover:bg-accent-foreground/10"
-              >
+              <Button asChild variant="ghost" size="lg">
                 <a href="https://wa.me/961XXXXXXXX" target="_blank" rel="noopener noreferrer">
-                  WhatsApp
+                  WhatsApp →
                 </a>
               </Button>
             </div>
