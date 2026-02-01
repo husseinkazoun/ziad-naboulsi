@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
+import stillChairsBw from "@/assets/still-chairs-bw.webp";
 
 const About = () => {
   const experience = [
@@ -50,24 +51,43 @@ const About = () => {
 
       <section className="py-24">
         <div className="container mx-auto px-6 lg:px-12">
-          {/* Header */}
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-            className="max-w-3xl mb-20"
-          >
-            <h1 className="font-heading text-5xl md:text-6xl font-bold mb-8">About</h1>
-            <p className="text-xl text-muted-foreground leading-relaxed">
-              I'm a videographer and editor based in Beirut, Lebanon. I believe in the power of 
-              visual storytelling to create meaningful connections between brands and their audiences.
-            </p>
-            <p className="mt-5 text-lg text-muted-foreground leading-relaxed">
-              With a background spanning commercials, broadcast television, and independent film, 
-              I bring a cinematic sensibility to every project. Whether it's a high-energy brand campaign 
-              or an intimate documentary, I approach each story with intention and craft.
-            </p>
-          </motion.div>
+          {/* Header with Editorial Image */}
+          <div className="grid md:grid-cols-[1fr,auto] gap-12 md:gap-16 mb-20 items-start">
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+              className="max-w-2xl"
+            >
+              <h1 className="font-heading text-5xl md:text-6xl font-bold mb-8">About</h1>
+              <p className="text-xl text-muted-foreground leading-relaxed">
+                I'm a videographer and editor based in Beirut, Lebanon. I believe in the power of 
+                visual storytelling to create meaningful connections between brands and their audiences.
+              </p>
+              <p className="mt-5 text-lg text-muted-foreground leading-relaxed">
+                With a background spanning commercials, broadcast television, and independent film, 
+                I bring a cinematic sensibility to every project. Whether it's a high-energy brand campaign 
+                or an intimate documentary, I approach each story with intention and craft.
+              </p>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.1 }}
+              className="w-full md:w-64 lg:w-80"
+            >
+              <img 
+                src={stillChairsBw}
+                alt="Frames from personal work"
+                loading="lazy"
+                className="w-full aspect-[3/4] object-cover rounded-sm"
+              />
+              <p className="mt-3 text-xs text-muted-foreground italic">
+                Frames from personal work
+              </p>
+            </motion.div>
+          </div>
 
           {/* Experience */}
           <motion.div

@@ -7,7 +7,9 @@ import SEO from "@/components/SEO";
 import ProjectCard from "@/components/ProjectCard";
 import { Button } from "@/components/ui/button";
 import { getFeaturedProjects, projects, clients } from "@/data/projects";
-import heroBg from "@/assets/hero-bg.jpg";
+import stillSunset from "@/assets/still-sunset.webp";
+import stillTerraces from "@/assets/still-terraces.webp";
+import stillHorse from "@/assets/still-horse.webp";
 import showreelPoster from "@/assets/showreel-poster.jpg";
 
 const Index = () => {
@@ -21,11 +23,13 @@ const Index = () => {
 
       {/* Hero Section */}
       <section className="min-h-[80vh] flex items-center relative overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${heroBg})` }}
+        <img 
+          src={stillSunset}
+          alt=""
+          loading="eager"
+          className="absolute inset-0 w-full h-full object-cover object-top"
         />
-        <div className="absolute inset-0 bg-background/70" />
+        <div className="absolute inset-0 bg-background/60" />
         
         <div className="container mx-auto px-6 lg:px-8 py-16 relative z-10 max-w-6xl">
           <motion.div
@@ -173,8 +177,15 @@ const Index = () => {
       </section>
 
       {/* Services */}
-      <section className="py-16 bg-secondary/30">
-        <div className="container mx-auto px-6 lg:px-8 max-w-5xl">
+      <section className="py-16 relative overflow-hidden">
+        <img 
+          src={stillTerraces}
+          alt=""
+          loading="lazy"
+          className="absolute inset-0 w-full h-full object-cover opacity-[0.12]"
+        />
+        <div className="absolute inset-0 bg-secondary/80" />
+        <div className="container mx-auto px-6 lg:px-8 max-w-5xl relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -238,8 +249,15 @@ const Index = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-16 border-t border-border">
-        <div className="container mx-auto px-6 lg:px-8 max-w-5xl">
+      <section className="py-16 relative overflow-hidden">
+        <img 
+          src={stillHorse}
+          alt=""
+          loading="lazy"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-background/75" />
+        <div className="container mx-auto px-6 lg:px-8 max-w-5xl relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
