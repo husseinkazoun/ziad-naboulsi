@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
-import ProjectCard from "@/components/ProjectCard";
+import VideoCard from "@/components/VideoCard";
 import { getProjectsByCategory } from "@/data/projects";
 
 const categories = [
@@ -16,6 +16,10 @@ const categories = [
 const Work = () => {
   const [activeCategory, setActiveCategory] = useState("all");
   const filteredProjects = getProjectsByCategory(activeCategory);
+
+  // Separate standard and vertical projects
+  const standardProjects = filteredProjects.filter((p) => !p.isVertical);
+  const verticalProjects = filteredProjects.filter((p) => p.isVertical);
 
   return (
     <Layout>
@@ -35,7 +39,7 @@ const Work = () => {
           >
             <h1 className="font-heading text-5xl md:text-6xl font-bold">Work</h1>
             <p className="mt-6 text-lg text-muted-foreground max-w-2xl leading-relaxed">
-              A collection of projects spanning commercials, social content, broadcast productions, 
+              A collection of projects spanning commercials, social content, broadcast productions,
               and independent films. Each piece crafted with intention.
             </p>
           </motion.div>
@@ -62,12 +66,41 @@ const Work = () => {
             ))}
           </motion.div>
 
-          {/* Projects Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
-            {filteredProjects.map((project, index) => (
-              <ProjectCard key={project.id} project={project} index={index} />
-            ))}
-          </div>
+          {/* Standard Projects Grid (16:9) */}
+          {standardProjects.length > 0 && (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+              {standardProjects.map((project, index) => (
+                <VideoCard
+                  key={project.id}
+                  title={project.title}
+                  role={project.role}
+                  vimeoId={project.vimeoId}
+                  thumbnail={project.thumbnail}
+                  index={index}
+                />
+              ))}
+            </div>
+          )}
+
+          {/* Vertical Projects Grid (9:16) */}
+          {verticalProjects.length > 0 && (
+            <div className="mt-16">
+              <h2 className="font-heading text-xl font-semibold mb-8">Social Reels</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 max-w-4xl">
+                {verticalProjects.map((project, index) => (
+                  <VideoCard
+                    key={project.id}
+                    title={project.title}
+                    role={project.role}
+                    vimeoId={project.vimeoId}
+                    thumbnail={project.thumbnail}
+                    index={index}
+                    isVertical
+                  />
+                ))}
+              </div>
+            </div>
+          )}
 
           {filteredProjects.length === 0 && (
             <p className="text-center text-muted-foreground py-24">

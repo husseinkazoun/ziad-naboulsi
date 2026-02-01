@@ -14,13 +14,14 @@ export interface Project {
   category: "commercial" | "social" | "broadcast" | "film";
   thumbnail: string;
   videoUrl: string;
-  vimeoId?: string;
+  vimeoId: string;
   description: string;
   role: string;
   year: string;
   deliverables: string;
   credits?: string;
   featured?: boolean;
+  isVertical?: boolean;
 }
 
 export const projects: Project[] = [
@@ -103,6 +104,7 @@ export const projects: Project[] = [
     year: "2024",
     deliverables: "Social Reel",
     credits: "Client: Milq Records",
+    isVertical: true,
   },
   {
     id: "milq-records-reel-2",
@@ -116,6 +118,7 @@ export const projects: Project[] = [
     year: "2024",
     deliverables: "Social Reel",
     credits: "Client: Milq Records",
+    isVertical: true,
   },
   {
     id: "solo-films",
@@ -156,6 +159,12 @@ export const clients = [
 ];
 
 export const getFeaturedProjects = () => projects.filter((p) => p.featured);
+
+// Get standard (non-vertical) projects only
+export const getStandardProjects = () => projects.filter((p) => !p.isVertical);
+
+// Get vertical reels only
+export const getVerticalReels = () => projects.filter((p) => p.isVertical);
 
 export const getProjectsByCategory = (category: string) =>
   category === "all" ? projects : projects.filter((p) => p.category === category);
