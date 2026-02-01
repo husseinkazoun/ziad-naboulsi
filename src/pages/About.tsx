@@ -57,16 +57,7 @@ const About = () => {
             transition={{ duration: 0.4 }}
             className="max-w-2xl mb-20"
           >
-            <h1 className="font-heading text-5xl md:text-6xl font-bold mb-8">About</h1>
-            <p className="text-xl text-muted-foreground leading-relaxed">
-              I'm a videographer and editor based in Beirut, Lebanon. I believe in the power of 
-              visual storytelling to create meaningful connections between brands and their audiences.
-            </p>
-            <p className="mt-5 text-lg text-muted-foreground leading-relaxed">
-              With a background spanning commercials, broadcast television, and independent film, 
-              I bring a cinematic sensibility to every project. Whether it's a high-energy brand campaign 
-              or an intimate documentary, I approach each story with intention and craft.
-            </p>
+            <h1 className="font-heading text-5xl md:text-6xl font-bold mb-8">Background</h1>
           </motion.div>
 
           {/* Experience */}

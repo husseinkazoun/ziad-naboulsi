@@ -110,6 +110,31 @@ const Index = () => {
         </div>
       </section>
 
+      {/* About Section - Below Hero */}
+      <section className="py-16 lg:py-20 border-b border-border/30">
+        <div className="container mx-auto px-6 lg:px-12 max-w-4xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
+            <p className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground mb-6">
+              About
+            </p>
+            <p className="text-lg md:text-xl text-foreground/90 leading-relaxed mb-5">
+              I'm a videographer and editor based in Beirut, Lebanon. I believe in the power of 
+              visual storytelling to create meaningful connections between brands and their audiences.
+            </p>
+            <p className="text-base text-muted-foreground leading-relaxed">
+              With a background spanning commercials, broadcast television, and independent film, 
+              I bring a cinematic sensibility to every project. Whether it's a high-energy brand campaign 
+              or an intimate documentary, I approach each story with intention and craft.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Showreel Section */}
       <section className="py-20 lg:py-28 bg-secondary/30">
         <div className="container mx-auto px-6 lg:px-8 max-w-5xl">
