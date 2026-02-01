@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 import { Project } from "@/data/projects";
 
 interface ProjectCardProps {
@@ -16,18 +17,26 @@ const ProjectCard = ({ project, index = 0 }: ProjectCardProps) => {
       viewport={{ once: true }}
     >
       <Link to={`/work/${project.id}`} className="group block">
-        <div className="relative aspect-video overflow-hidden rounded-md bg-secondary">
+        <div className="relative aspect-video overflow-hidden rounded-sm bg-secondary">
           <img
             src={project.thumbnail}
             alt={project.title}
             className="w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-80"
           />
+          {/* Hover overlay with "View project" */}
+          <div className="absolute inset-0 flex items-end justify-start p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t from-background/80 to-transparent">
+            <span className="text-sm text-foreground flex items-center gap-1.5">
+              View project <ArrowRight className="w-3.5 h-3.5" />
+            </span>
+          </div>
         </div>
-        <div className="mt-4">
-          <h3 className="font-heading text-lg font-semibold group-hover:underline underline-offset-4 transition-colors">
+        <div className="mt-3">
+          <h3 className="font-heading text-base font-semibold leading-tight">
             {project.title}
           </h3>
-          <p className="mt-1 text-sm text-muted-foreground">{project.role}</p>
+          <p className="mt-1 text-xs text-muted-foreground uppercase tracking-wide">
+            {project.role}
+          </p>
         </div>
       </Link>
     </motion.article>
