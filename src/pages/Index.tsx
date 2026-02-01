@@ -122,64 +122,6 @@ I believe in the power of visual storytelling to create meaningful experiences.<
         </div>
       </section>
 
-      {/* Showreel Section */}
-      <section className="py-12 lg:py-16 bg-secondary/30">
-        <div className="container mx-auto px-6 lg:px-12 max-w-4xl">
-          <div className="flex flex-col gap-6 lg:gap-8">
-            {/* Left Video Panel - 80% */}
-            <motion.div initial={{
-            opacity: 0,
-            scale: 0.98
-          }} whileInView={{
-            opacity: 1,
-            scale: 1
-          }} transition={{
-            duration: 0.5
-          }} viewport={{
-            once: true
-          }} className="w-full rounded-lg overflow-hidden bg-secondary shadow-2xl">
-              <div style={{
-              padding: "52.78% 0 0 0",
-              position: "relative"
-            }}>
-                <iframe src="https://player.vimeo.com/video/1160737812?title=0&byline=0&portrait=0&badge=0&autopause=0&autoplay=1&muted=1&loop=1&player_id=0&app_id=58479" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerPolicy="strict-origin-when-cross-origin" style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                width: "100%",
-                height: "100%"
-              }} title="Showreel 2024" />
-              </div>
-            </motion.div>
-
-            {/* Info Panel */}
-            <motion.div initial={{
-            opacity: 0,
-            x: 20
-          }} whileInView={{
-            opacity: 1,
-            x: 0
-          }} transition={{
-            duration: 0.5,
-            delay: 0.1
-          }} viewport={{
-            once: true
-          }} className="w-full flex flex-col sm:flex-row sm:justify-between sm:items-start gap-6 sm:gap-16">
-              <div>
-                <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-3">
-                  Showreel
-                </p>
-                <h3 className="font-heading text-2xl md:text-3xl font-bold mb-4">Ali abboud- Album teaser</h3>
-                <p className="text-base text-muted-foreground leading-relaxed">Role: Editor<br />Category: Commercial</p>
-              </div>
-              <a href="https://vimeo.com/1160737812" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-base font-medium text-foreground hover:text-muted-foreground transition-colors group whitespace-nowrap sm:mt-8">
-                Watch on Vimeo
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </a>
-            </motion.div>
-          </div>
-        </div>
-      </section>
 
 
     
