@@ -136,45 +136,62 @@ I believe in the power of visual storytelling to create meaningful experiences.<
 
       {/* Showreel Section */}
       <section className="py-20 lg:py-28 bg-secondary/30">
-        <div className="container mx-auto px-6 lg:px-8 max-w-5xl">
-          <motion.div initial={{
-          opacity: 0,
-          y: 20
-        }} whileInView={{
-          opacity: 1,
-          y: 0
-        }} transition={{
-          duration: 0.5
-        }} viewport={{
-          once: true
-        }} className="text-center mb-10">
-            
-          </motion.div>
-          <motion.div initial={{
-          opacity: 0,
-          scale: 0.98
-        }} whileInView={{
-          opacity: 1,
-          scale: 1
-        }} transition={{
-          duration: 0.5,
-          delay: 0.1
-        }} viewport={{
-          once: true
-        }} className="rounded-lg overflow-hidden bg-secondary shadow-2xl">
-            <div style={{
-            padding: "52.78% 0 0 0",
-            position: "relative"
-          }}>
-              <iframe src="https://player.vimeo.com/video/1160737812?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerPolicy="strict-origin-when-cross-origin" style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              width: "100%",
-              height: "100%"
-            }} title="Showreel" />
-            </div>
-          </motion.div>
+        <div className="container mx-auto px-6 lg:px-8 max-w-7xl">
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-0">
+            {/* Left Info Panel - 20% */}
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="lg:w-[20%] flex flex-col justify-center lg:pr-8"
+            >
+              <p className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground mb-3">
+                Showreel
+              </p>
+              <h3 className="font-heading text-xl md:text-2xl font-bold mb-4">
+                2024 Reel
+              </h3>
+              <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
+                A collection of recent work across commercials, documentaries, and branded content.
+              </p>
+              <a 
+                href="https://vimeo.com/1160737812" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-muted-foreground transition-colors group"
+              >
+                Watch on Vimeo
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </a>
+            </motion.div>
+
+            {/* Right Video Panel - 80% */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.98 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="lg:w-[80%] rounded-lg overflow-hidden bg-secondary shadow-2xl"
+            >
+              <div style={{ padding: "52.78% 0 0 0", position: "relative" }}>
+                <iframe 
+                  src="https://player.vimeo.com/video/1160737812?title=0&byline=0&portrait=0&badge=0&autopause=0&autoplay=1&muted=1&loop=1&player_id=0&app_id=58479" 
+                  frameBorder="0" 
+                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
+                  referrerPolicy="strict-origin-when-cross-origin" 
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "100%"
+                  }} 
+                  title="Showreel 2024" 
+                />
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
