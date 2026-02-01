@@ -149,7 +149,7 @@ I believe in the power of visual storytelling to create meaningful experiences.<
             duration: 0.5
           }} viewport={{
             once: true
-          }} className="lg:w-[68%] rounded-lg overflow-hidden bg-secondary shadow-2xl">
+          }} className="lg:w-[55%] rounded-lg overflow-hidden bg-secondary shadow-2xl">
               <div style={{
               padding: "52.78% 0 0 0",
               position: "relative"
@@ -176,7 +176,7 @@ I believe in the power of visual storytelling to create meaningful experiences.<
             delay: 0.1
           }} viewport={{
             once: true
-          }} className="lg:w-[32%] flex flex-col justify-center lg:pl-4">
+          }} className="lg:w-[45%] flex flex-col justify-center lg:pl-6">
               <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-3">
                 Showreel
               </p>
