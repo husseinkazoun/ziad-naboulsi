@@ -144,7 +144,7 @@ const Contact = () => {
                   </a>
 
                   <a
-                    href="https://wa.me/961XXXXXXXX"
+                    href="https://wa.me/96170664916"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-4 text-muted-foreground hover:text-foreground transition-colors"
@@ -152,7 +152,7 @@ const Contact = () => {
                     <Phone className="w-4 h-4" />
                     <div>
                       <p className="text-xs text-muted-foreground uppercase tracking-wider">WhatsApp</p>
-                      <p className="text-sm text-foreground mt-0.5">+961 XX XXX XXX</p>
+                      <p className="text-sm text-foreground mt-0.5">+961 70 664 916</p>
                     </div>
                   </a>
 
@@ -171,7 +171,7 @@ const Contact = () => {
                 <h3 className="font-heading text-base font-semibold mb-4">Quick Connect</h3>
                 <Button asChild variant="outline" size="lg" className="w-full">
                   <a
-                    href="https://wa.me/961XXXXXXXX"
+                    href="https://wa.me/96170664916"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -185,7 +185,7 @@ const Contact = () => {
                 <h3 className="font-heading text-base font-semibold mb-4">Follow Along</h3>
                 <div className="flex gap-6 text-sm">
                   <a
-                    href="https://instagram.com"
+                    href="https://instagram.com/ziadnaboulsi"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-muted-foreground hover:underline underline-offset-4"
@@ -193,7 +193,7 @@ const Contact = () => {
                     Instagram
                   </a>
                   <a
-                    href="https://vimeo.com"
+                    href="https://vimeo.com/ziadnaboulsi"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-muted-foreground hover:underline underline-offset-4"
@@ -201,7 +201,7 @@ const Contact = () => {
                     Vimeo
                   </a>
                   <a
-                    href="https://linkedin.com"
+                    href="https://linkedin.com/in/ziadnaboulsi"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-muted-foreground hover:underline underline-offset-4"

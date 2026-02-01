@@ -51,7 +51,7 @@ const Footer = () => {
                 hello@ziadnaboulsi.com
               </a>
               <a
-                href="https://wa.me/961XXXXXXXX"
+                href="https://wa.me/96170664916"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:underline underline-offset-4"
@@ -70,7 +70,7 @@ const Footer = () => {
           </p>
           <div className="flex gap-8">
             <a
-              href="https://instagram.com"
+              href="https://instagram.com/ziadnaboulsi"
               target="_blank"
               rel="noopener noreferrer"
               className="text-xs text-muted-foreground hover:underline underline-offset-4"
@@ -78,7 +78,7 @@ const Footer = () => {
               Instagram
             </a>
             <a
-              href="https://vimeo.com"
+              href="https://vimeo.com/ziadnaboulsi"
               target="_blank"
               rel="noopener noreferrer"
               className="text-xs text-muted-foreground hover:underline underline-offset-4"
@@ -86,7 +86,7 @@ const Footer = () => {
               Vimeo
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://linkedin.com/in/ziadnaboulsi"
               target="_blank"
               rel="noopener noreferrer"
               className="text-xs text-muted-foreground hover:underline underline-offset-4"
