@@ -144,7 +144,7 @@ I believe in the power of visual storytelling to create meaningful experiences.<
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className="lg:w-[85%] rounded-lg overflow-hidden bg-secondary shadow-2xl"
+              className="lg:w-[68%] rounded-lg overflow-hidden bg-secondary shadow-2xl"
             >
               <div style={{ padding: "52.78% 0 0 0", position: "relative" }}>
                 <iframe 
@@ -170,7 +170,7 @@ I believe in the power of visual storytelling to create meaningful experiences.<
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
               viewport={{ once: true }}
-              className="lg:w-[15%] flex flex-col justify-center lg:pl-2"
+              className="lg:w-[32%] flex flex-col justify-center lg:pl-4"
             >
               <p className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground mb-3">
                 Showreel
