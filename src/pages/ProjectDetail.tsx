@@ -3,8 +3,10 @@ import { motion } from "framer-motion";
 import { ArrowLeft, ArrowRight, ExternalLink } from "lucide-react";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
+import VimeoEmbed from "@/components/VimeoEmbed";
 import { Button } from "@/components/ui/button";
 import { getProjectById, getAdjacentProjects } from "@/data/projects";
+import { getVimeoEmbed } from "@/data/vimeoEmbeds";
 
 const ProjectDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -79,19 +81,12 @@ const ProjectDetail = () => {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.05 }}
-            className="relative aspect-video bg-secondary rounded-md overflow-hidden mb-12"
+            className="bg-secondary rounded-md overflow-hidden mb-12"
           >
-            {project.vimeoId ? (
-              <iframe
-                src={`https://player.vimeo.com/video/${project.vimeoId}?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0`}
-                className="absolute inset-0 w-full h-full"
-                frameBorder="0"
-                allow="autoplay; fullscreen; picture-in-picture"
-                allowFullScreen
-                title={project.title}
-              />
+            {project.vimeoId && getVimeoEmbed(project.vimeoId) ? (
+              <VimeoEmbed html={getVimeoEmbed(project.vimeoId)!} />
             ) : (
-              <div className="absolute inset-0 flex items-center justify-center">
+              <div className="aspect-video flex items-center justify-center">
                 <Button asChild variant="outline" size="lg">
                   <a
                     href={project.videoUrl}

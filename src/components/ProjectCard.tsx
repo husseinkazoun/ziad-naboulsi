@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
 import { Project } from "@/data/projects";
+import { getVimeoEmbed } from "@/data/vimeoEmbeds";
+import VimeoEmbed from "@/components/VimeoEmbed";
 
 interface ProjectCardProps {
   project: Project;
@@ -9,6 +10,8 @@ interface ProjectCardProps {
 }
 
 const ProjectCard = ({ project, index = 0 }: ProjectCardProps) => {
+  const embedHtml = project.vimeoId ? getVimeoEmbed(project.vimeoId) : null;
+
   return (
     <motion.article
       initial={{ opacity: 0, y: 12 }}
@@ -16,22 +19,20 @@ const ProjectCard = ({ project, index = 0 }: ProjectCardProps) => {
       transition={{ duration: 0.4, delay: index * 0.05 }}
       viewport={{ once: true }}
     >
-      <Link to={`/work/${project.id}`} className="group block">
-        <div className="relative aspect-video overflow-hidden rounded-sm bg-secondary">
+      <div className="relative aspect-video overflow-hidden rounded-sm bg-secondary">
+        {embedHtml ? (
+          <VimeoEmbed html={embedHtml} />
+        ) : (
           <img
             src={project.thumbnail}
             alt={project.title}
-            className="w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-80"
+            className="w-full h-full object-cover"
           />
-          {/* Hover overlay with "View project" */}
-          <div className="absolute inset-0 flex items-end justify-start p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t from-background/80 to-transparent">
-            <span className="text-sm text-foreground flex items-center gap-1.5">
-              View project <ArrowRight className="w-3.5 h-3.5" />
-            </span>
-          </div>
-        </div>
+        )}
+      </div>
+      <Link to={`/work/${project.id}`} className="block group">
         <div className="mt-3">
-          <h3 className="font-heading text-base font-semibold leading-tight">
+          <h3 className="font-heading text-base font-semibold leading-tight group-hover:underline underline-offset-2">
             {project.title}
           </h3>
           <p className="mt-1 text-xs text-muted-foreground uppercase tracking-wide">

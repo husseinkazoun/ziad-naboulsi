@@ -5,8 +5,10 @@ import { useState } from "react";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
 import ProjectCard from "@/components/ProjectCard";
+import VimeoEmbed from "@/components/VimeoEmbed";
 import { Button } from "@/components/ui/button";
 import { getFeaturedProjects, projects, clients } from "@/data/projects";
+import { vimeoEmbeds } from "@/data/vimeoEmbeds";
 import heroBg from "@/assets/hero-bg.jpg";
 import showreelPoster from "@/assets/showreel-poster.jpg";
 const Index = () => {
@@ -71,22 +73,17 @@ const Index = () => {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.4 }}
             viewport={{ once: true }}
-            className="relative aspect-[2.1/1] rounded-sm overflow-hidden bg-secondary"
+            className="relative aspect-video rounded-sm overflow-hidden bg-secondary"
           >
             {reelPlaying ? (
-              <iframe
-                src="https://player.vimeo.com/video/example?autoplay=1&title=0&byline=0&portrait=0"
-                className="absolute inset-0 w-full h-full"
-                allow="autoplay; fullscreen"
-                allowFullScreen
-              />
+              <VimeoEmbed html={vimeoEmbeds["1160737812"]} />
             ) : (
               <button
                 onClick={() => setReelPlaying(true)}
                 className="absolute inset-0 w-full h-full flex items-center justify-center group"
               >
-                <img 
-                  src={showreelPoster} 
+                <img
+                  src={showreelPoster}
                   alt="Showreel preview"
                   className="absolute inset-0 w-full h-full object-cover"
                 />
@@ -96,7 +93,7 @@ const Index = () => {
                     <Play className="w-6 h-6 text-foreground ml-0.5" />
                   </div>
                   <span className="font-heading text-sm font-medium uppercase tracking-widest">
-                    Play Showreel (60s)
+                    Play Showreel
                   </span>
                 </div>
               </button>
