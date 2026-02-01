@@ -177,16 +177,19 @@ I believe in the power of visual storytelling to create meaningful experiences.<
           }} viewport={{
             once: true
           }} className="w-full">
-              <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-3">
-                Showreel
-              </p>
-              <h3 className="font-heading text-2xl md:text-3xl font-bold mb-4">Ali abboud- Album teaser</h3>
-              <p className="text-base text-muted-foreground mb-6 leading-relaxed">Role: Editor
-Category: Commercial</p>
-              <a href="https://vimeo.com/1160737812" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-base font-medium text-foreground hover:text-muted-foreground transition-colors group">
-                Watch on Vimeo
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </a>
+              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+                <div>
+                  <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-2">
+                    Showreel
+                  </p>
+                  <h3 className="font-heading text-2xl md:text-3xl font-bold mb-2">Ali abboud- Album teaser</h3>
+                  <p className="text-base text-muted-foreground leading-relaxed">Role: Editor · Commercial</p>
+                </div>
+                <a href="https://vimeo.com/1160737812" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-base font-medium text-foreground hover:text-muted-foreground transition-colors group sm:mt-6">
+                  Watch on Vimeo
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </a>
+              </div>
             </motion.div>
           </div>
         </div>
