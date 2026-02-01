@@ -163,19 +163,17 @@ I believe in the power of visual storytelling to create meaningful experiences.<
           delay: 0.1
         }} viewport={{
           once: true
-        }} className="relative aspect-video rounded-lg overflow-hidden bg-secondary shadow-2xl">
-            {reelPlaying ? <VimeoEmbed html={vimeoEmbeds["1160737812"]} /> : <button onClick={() => setReelPlaying(true)} className="absolute inset-0 w-full h-full flex items-center justify-center group">
-                <img src={showreelPoster} alt="Showreel preview" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-background/50 group-hover:bg-background/40 transition-colors duration-300" />
-                <div className="relative z-10 flex flex-col items-center gap-4">
-                  <div className="w-20 h-20 rounded-full bg-foreground flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-2xl">
-                    <Play className="w-8 h-8 text-background ml-1" fill="currentColor" />
-                  </div>
-                  <span className="font-heading text-sm font-medium uppercase tracking-[0.15em] text-foreground/90">
-                    Play Showreel
-                  </span>
-                </div>
-              </button>}
+        }} className="rounded-lg overflow-hidden bg-secondary shadow-2xl">
+            <div style={{padding: "52.78% 0 0 0", position: "relative"}}>
+              <iframe 
+                src="https://player.vimeo.com/video/1160737812?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479" 
+                frameBorder="0" 
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
+                referrerPolicy="strict-origin-when-cross-origin" 
+                style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%"}} 
+                title="Showreel"
+              />
+            </div>
           </motion.div>
         </div>
       </section>
