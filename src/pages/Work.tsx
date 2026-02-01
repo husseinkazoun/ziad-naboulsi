@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, X } from "lucide-react";
 import Layout from "@/components/Layout";
@@ -24,12 +24,42 @@ const clientVideos = [
 
 const Work = () => {
   const [activeClient, setActiveClient] = useState<string | null>(null);
+  const [aspectRatios, setAspectRatios] = useState<Record<string, number>>({});
+
+  // Fetch aspect ratios from Vimeo oEmbed
+  useEffect(() => {
+    const fetchAspectRatios = async () => {
+      const ratios: Record<string, number> = {};
+      await Promise.all(
+        clientVideos.map(async (client) => {
+          try {
+            const response = await fetch(
+              `https://vimeo.com/api/oembed.json?url=https://vimeo.com/${client.vimeoId}`
+            );
+            if (response.ok) {
+              const data = await response.json();
+              ratios[client.vimeoId] = data.width / data.height;
+            } else {
+              ratios[client.vimeoId] = 16 / 9; // fallback
+            }
+          } catch {
+            ratios[client.vimeoId] = 16 / 9; // fallback
+          }
+        })
+      );
+      setAspectRatios(ratios);
+    };
+    fetchAspectRatios();
+  }, []);
 
   // Get projects for sections
   const allProjects = projects;
   const featuredProjects = allProjects.slice(0, 3);
 
   const activeClientVideo = clientVideos.find(c => c.name === activeClient);
+  const activeAspectRatio = activeClientVideo 
+    ? (aspectRatios[activeClientVideo.vimeoId] || 16 / 9)
+    : 16 / 9;
 
   return (
     <Layout>
@@ -189,32 +219,30 @@ const Work = () => {
                   transition={{ duration: 0.3 }}
                   className="overflow-hidden"
                 >
-                  <div className="mt-10 max-w-4xl mx-auto">
-                    <div className="relative rounded-lg overflow-hidden bg-secondary shadow-xl">
+                  <div className="mt-10 flex flex-col items-center">
+                    <div 
+                      className="relative rounded-lg overflow-hidden bg-secondary shadow-xl"
+                      style={{
+                        width: `min(92vw, calc(85vh * ${activeAspectRatio}))`,
+                        aspectRatio: `${activeAspectRatio}`,
+                      }}
+                    >
                       <button
                         onClick={() => setActiveClient(null)}
                         className="absolute top-4 right-4 z-10 p-2 bg-background/80 rounded-full hover:bg-background transition-colors"
                       >
                         <X className="w-4 h-4" />
                       </button>
-                      <div style={{ padding: "56.25% 0 0 0", position: "relative" }}>
-                        <iframe
-                          src={`https://player.vimeo.com/video/${activeClientVideo.vimeoId}?title=0&byline=0&portrait=0&badge=0&autopause=0&autoplay=1&player_id=0&app_id=58479`}
-                          frameBorder="0"
-                          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-                          referrerPolicy="strict-origin-when-cross-origin"
-                          style={{
-                            position: "absolute",
-                            top: 0,
-                            left: 0,
-                            width: "100%",
-                            height: "100%"
-                          }}
-                          title={activeClientVideo.name}
-                        />
-                      </div>
+                      <iframe
+                        src={`https://player.vimeo.com/video/${activeClientVideo.vimeoId}?title=0&byline=0&portrait=0&badge=0&autopause=0&autoplay=1&player_id=0&app_id=58479`}
+                        frameBorder="0"
+                        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                        referrerPolicy="strict-origin-when-cross-origin"
+                        className="absolute inset-0 w-full h-full"
+                        title={activeClientVideo.name}
+                      />
                     </div>
-                    <div className="mt-4 flex items-center justify-between">
+                    <div className="mt-4 flex items-center justify-between w-full max-w-md">
                       <p className="text-sm font-medium">{activeClientVideo.name}</p>
                       <a
                         href={`https://vimeo.com/${activeClientVideo.vimeoId}`}
