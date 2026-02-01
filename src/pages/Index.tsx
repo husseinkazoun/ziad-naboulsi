@@ -148,9 +148,7 @@ I believe in the power of visual storytelling to create meaningful experiences.<
         }} viewport={{
           once: true
         }} className="text-center mb-10">
-            <h2 className="font-heading text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground">
-              Showreel
-            </h2>
+            
           </motion.div>
           <motion.div initial={{
           opacity: 0,
@@ -164,15 +162,17 @@ I believe in the power of visual storytelling to create meaningful experiences.<
         }} viewport={{
           once: true
         }} className="rounded-lg overflow-hidden bg-secondary shadow-2xl">
-            <div style={{padding: "52.78% 0 0 0", position: "relative"}}>
-              <iframe 
-                src="https://player.vimeo.com/video/1160737812?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479" 
-                frameBorder="0" 
-                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
-                referrerPolicy="strict-origin-when-cross-origin" 
-                style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%"}} 
-                title="Showreel"
-              />
+            <div style={{
+            padding: "52.78% 0 0 0",
+            position: "relative"
+          }}>
+              <iframe src="https://player.vimeo.com/video/1160737812?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerPolicy="strict-origin-when-cross-origin" style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%"
+            }} title="Showreel" />
             </div>
           </motion.div>
         </div>
