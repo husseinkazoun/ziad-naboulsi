@@ -26,7 +26,7 @@ const Index = () => {
 
       {/* Hero Section */}
       <section className="min-h-[85vh] flex items-center relative overflow-hidden">
-        <img src={heroBg} alt="" loading="eager" className="absolute inset-0 w-full h-full object-cover object-center blur-[2px]" />
+        <img src={heroBg} alt="" loading="eager" className="absolute inset-0 w-full h-full object-cover object-right blur-[2px]" />
         <div className="absolute inset-0 bg-background/80" />
 
         <div className="container mx-auto px-6 lg:px-12 py-20 relative z-10 max-w-7xl">
