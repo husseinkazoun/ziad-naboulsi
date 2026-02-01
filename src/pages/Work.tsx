@@ -191,7 +191,7 @@ const Work = () => {
             once: true
           }}>
             <p className="text-[10px] font-medium uppercase tracking-[0.25em] text-muted-foreground/70 text-center mb-10">
-              Trusted By
+              Projects
             </p>
             <div className="flex flex-wrap justify-center items-center gap-x-10 gap-y-4 lg:gap-x-14">
               {clientVideos.map((client, index) => (
