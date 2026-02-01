@@ -164,7 +164,7 @@ I believe in the power of visual storytelling to create meaningful experiences.<
               </div>
             </motion.div>
 
-            {/* Right Info Panel - 20% */}
+            {/* Info Panel */}
             <motion.div initial={{
             opacity: 0,
             x: 20
@@ -176,14 +176,15 @@ I believe in the power of visual storytelling to create meaningful experiences.<
             delay: 0.1
           }} viewport={{
             once: true
-          }} className="w-full">
-              <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-3">
-                Showreel
-              </p>
-              <h3 className="font-heading text-2xl md:text-3xl font-bold mb-4">Ali abboud- Album teaser</h3>
-              <p className="text-base text-muted-foreground mb-6 leading-relaxed">Role: Editor
-Category: Commercial</p>
-              <a href="https://vimeo.com/1160737812" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-base font-medium text-foreground hover:text-muted-foreground transition-colors group">
+          }} className="w-full flex flex-col sm:flex-row sm:justify-between sm:items-start gap-6 sm:gap-16">
+              <div>
+                <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-3">
+                  Showreel
+                </p>
+                <h3 className="font-heading text-2xl md:text-3xl font-bold mb-4">Ali abboud- Album teaser</h3>
+                <p className="text-base text-muted-foreground leading-relaxed">Role: Editor<br />Category: Commercial</p>
+              </div>
+              <a href="https://vimeo.com/1160737812" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-base font-medium text-foreground hover:text-muted-foreground transition-colors group whitespace-nowrap sm:mt-8">
                 Watch on Vimeo
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
