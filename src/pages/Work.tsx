@@ -70,8 +70,8 @@ const Work = () => {
 
       {/* Showreel Section */}
       <section className="py-12 lg:py-16 bg-secondary/30">
-        <div className="container mx-auto px-6 lg:px-12 max-w-6xl">
-          <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 max-w-4xl mx-auto lg:max-w-none">
+        <div className="container mx-auto px-6 lg:px-12 max-w-7xl">
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-10">
             {/* Video 1 - Ali Abboud (left) */}
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true }} className="flex-1 flex flex-col gap-4">
               <div className="rounded-lg overflow-hidden bg-secondary shadow-2xl">
