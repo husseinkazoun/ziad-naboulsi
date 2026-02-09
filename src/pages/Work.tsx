@@ -70,10 +70,10 @@ const Work = () => {
 
       {/* Showreel Section */}
       <section className="py-12 lg:py-16 bg-secondary/30">
-        <div className="container mx-auto px-6 lg:px-12 max-w-7xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
-            {/* Video 1 - Ali Abboud */}
-            <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true }} className="flex flex-col gap-4">
+        <div className="container mx-auto px-6 lg:px-12 max-w-6xl">
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-10">
+            {/* Video 1 - Ali Abboud (left) */}
+            <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true }} className="flex-1 flex flex-col gap-4">
               <div className="rounded-lg overflow-hidden bg-secondary shadow-2xl">
                 <div style={{ padding: "52.78% 0 0 0", position: "relative" }}>
                   <iframe src="https://player.vimeo.com/video/1160737812?title=0&byline=0&portrait=0&badge=0&autopause=0&autoplay=1&muted=1&loop=1&player_id=0&app_id=58479" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerPolicy="strict-origin-when-cross-origin" style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }} title="Ali abboud - Album teaser" />
@@ -91,8 +91,8 @@ const Work = () => {
               </div>
             </motion.div>
 
-            {/* Video 2 - Kingdom Of Sport */}
-            <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }} viewport={{ once: true }} className="flex flex-col gap-4">
+            {/* Video 2 - Kingdom Of Sport (right, offset down) */}
+            <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.15 }} viewport={{ once: true }} className="flex-1 flex flex-col gap-4 lg:mt-20">
               <div className="rounded-lg overflow-hidden bg-secondary shadow-2xl">
                 <div style={{ padding: "56.25% 0 0 0", position: "relative" }}>
                   <iframe src="https://player.vimeo.com/video/1161526504?title=0&byline=0&portrait=0&badge=0&autopause=0&autoplay=1&muted=1&loop=1&player_id=0&app_id=58479" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerPolicy="strict-origin-when-cross-origin" style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }} title="Kingdom Of Sport - Diving" />
