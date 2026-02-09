@@ -3,7 +3,7 @@ import { Film, Globe, Camera, Tv, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
-import stillHorse from "@/assets/still-horse.webp";
+import aboutPhoto from "@/assets/about-photo.png";
 
 const About = () => {
   const experience = [
@@ -68,7 +68,7 @@ const About = () => {
           }} viewport={{
             once: true
           }} className="relative aspect-[4/3] rounded-lg overflow-hidden">
-              <img src={stillHorse} alt="On set" className="w-full h-full object-cover" />
+              <img src={aboutPhoto} alt="On set" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-background/20 to-transparent" />
             </motion.div>
 
