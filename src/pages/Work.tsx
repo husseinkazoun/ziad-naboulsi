@@ -91,6 +91,19 @@ const Work = () => {
               </div>
             </motion.div>
 
+            {/* Video 1b - Kingdom Of Sport Swimming */}
+            <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true }} className="flex flex-col gap-4 max-w-sm">
+              <div className="rounded-md overflow-hidden bg-secondary shadow-xl">
+                <div style={{ padding: "56.25% 0 0 0", position: "relative" }}>
+                  <iframe src="https://player.vimeo.com/video/1161527585?title=0&byline=0&portrait=0&badge=0&autopause=0&autoplay=1&muted=1&loop=1&player_id=0&app_id=58479" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerPolicy="strict-origin-when-cross-origin" style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }} title="Kingdom Of Sport - Swimming" />
+                </div>
+              </div>
+              <div>
+                <h3 className="font-heading font-semibold text-lg leading-tight">Kingdom Of Sport - Swimming | SSC x Shahid</h3>
+                <p className="mt-1.5 text-xs text-muted-foreground uppercase tracking-wider">Video Editor</p>
+              </div>
+            </motion.div>
+
             {/* Video 2 - Ali Abboud */}
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true }} className="flex flex-col gap-4">
               <div className="rounded-lg overflow-hidden bg-secondary shadow-2xl">
