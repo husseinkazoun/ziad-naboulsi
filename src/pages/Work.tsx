@@ -12,6 +12,7 @@ import thumbMerehbi from "@/assets/thumb-merehbi.jpg";
 import thumbCrowOutlet from "@/assets/thumb-crow-outlet.jpg";
 import thumbTradingRoad from "@/assets/thumb-trading-road.jpg";
 import thumbSakrFurniture from "@/assets/thumb-sakr-furniture.jpg";
+import shahidLogo from "@/assets/shahid-logo.png";
 
 
 const clientVideos = [
@@ -72,6 +73,12 @@ const Work = () => {
       <section className="py-12 lg:py-16 bg-secondary/30">
         <div className="container mx-auto px-6 lg:px-12 max-w-4xl">
           <div className="flex flex-col gap-10 lg:gap-14">
+            {/* SSC x Shahid Title */}
+            <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true }} className="flex items-center gap-4 mb-2">
+              <h2 className="font-heading text-2xl md:text-3xl font-bold">SSC x Shahid</h2>
+              <img src={shahidLogo} alt="Shahid" className="h-8 md:h-10 object-contain" />
+            </motion.div>
+
             {/* Video 1 - Kingdom Of Sport */}
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true }} className="flex flex-col gap-4">
               <div className="rounded-lg overflow-hidden bg-secondary shadow-2xl">
