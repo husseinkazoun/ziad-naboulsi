@@ -92,7 +92,7 @@ const About = () => {
                 Ziad Naboulsi
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-10 text-[15px]">
-                With over a decade of experience in video production, I bring a cinematic sensibility to every project—whether it's a 30-second commercial, a multi-episode documentary series, or a feature film. My work spans brands, broadcasters, NGOs, and independent filmmakers, always with a focus on visual storytelling that connects and resonates.
+                With over 5 years of experience in video production, I bring a cinematic sensibility to every project—whether it's a 30-second commercial, a multi-episode documentary series, or a feature film. My work spans brands, broadcasters, NGOs, and independent filmmakers, always with a focus on visual storytelling that connects and resonates.
               </p>
 
               {/* Highlights */}
