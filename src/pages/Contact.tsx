@@ -249,14 +249,6 @@ const Contact = () => {
                   >
                     Vimeo
                   </a>
-                  <a
-                    href="https://linkedin.com/in/ziadnaboulsi"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-muted-foreground hover:underline underline-offset-4"
-                  >
-                    LinkedIn
-                  </a>
                 </div>
               </div>
             </motion.div>
