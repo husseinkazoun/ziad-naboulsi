@@ -74,9 +74,25 @@ const Work = () => {
         <div className="container mx-auto px-6 lg:px-12 max-w-4xl">
           <div className="flex flex-col gap-10 lg:gap-14">
             {/* SSC x Shahid Title */}
-            <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true }} className="flex items-center gap-4 mb-2">
-              <h2 className="font-heading text-2xl md:text-3xl font-bold">SSC x Shahid</h2>
-              <img src={shahidLogo} alt="Shahid" className="h-8 md:h-10 object-contain" />
+            <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true }} className="flex flex-col gap-4 mb-2">
+              <div className="flex items-center gap-4">
+                <h2 className="font-heading text-2xl md:text-3xl font-bold">SSC x Shahid</h2>
+                <img src={shahidLogo} alt="Shahid" className="h-8 md:h-10 object-contain" />
+              </div>
+              <p className="text-base text-muted-foreground leading-relaxed max-w-2xl">
+                Following athletes of all levels as they share their passion, challenges, and triumphs, the docuseries explores new horizons across the dynamic landscape of Saudi sports.
+              </p>
+              <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
+                <span>Season 2025</span>
+                <span>·</span>
+                <span>Sports</span>
+                <span>·</span>
+                <span>Free Show</span>
+              </div>
+              <a href="https://shahid.mbc.net/en/shows/%D8%B1%D9%8A%D8%A7%D8%B6%D8%A9-%D9%88%D8%AD%D9%83%D8%A7%D9%8A%D8%A7%D8%AA/show-49923214668132" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-base font-medium text-foreground hover:text-muted-foreground transition-colors group">
+                Watch on Shahid
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </a>
             </motion.div>
 
             {/* Video 1 - Kingdom Of Sport */}
