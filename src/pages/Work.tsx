@@ -112,9 +112,6 @@ const Work = () => {
             once: true
           }} className="w-full flex flex-col sm:flex-row sm:justify-between sm:items-start gap-6 sm:gap-16">
               <div>
-                <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground mb-3">
-                  Showreel
-                </p>
                 <h3 className="font-heading text-2xl md:text-3xl font-bold mb-4">Ali abboud- Album teaser</h3>
                 <p className="text-base text-muted-foreground leading-relaxed">Role: Editor<br />Category: Commercial</p>
               </div>
