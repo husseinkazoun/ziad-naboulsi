@@ -221,7 +221,7 @@ const Contact = () => {
                 <h3 className="font-heading text-base font-semibold mb-4">Follow Along</h3>
                 <div className="flex gap-6 text-sm">
                   <a
-                    href="https://instagram.com/ziadnaboulsi"
+                    href="https://www.instagram.com/ziadnaboulsi_/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-muted-foreground hover:underline underline-offset-4"
