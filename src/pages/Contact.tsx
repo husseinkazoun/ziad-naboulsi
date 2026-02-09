@@ -168,13 +168,13 @@ const Contact = () => {
                 <h2 className="font-heading text-lg font-semibold mb-8">Contact Details</h2>
                 <div className="space-y-6">
                   <a
-                    href="mailto:ziadnb123@gmail.com"
+                    href="mailto:theziadnaboulsi@gmail.com"
                     className="flex items-center gap-4 text-muted-foreground hover:text-foreground transition-colors"
                   >
                     <Mail className="w-4 h-4" />
                     <div>
                       <p className="text-xs text-muted-foreground uppercase tracking-wider">Email</p>
-                      <p className="text-sm text-foreground mt-0.5">ziadnb123@gmail.com</p>
+                      <p className="text-sm text-foreground mt-0.5">theziadnaboulsi@gmail.com</p>
                     </div>
                   </a>
 
