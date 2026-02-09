@@ -76,7 +76,7 @@ const Work = () => {
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true }} className="flex flex-col gap-4">
               <div className="rounded-lg overflow-hidden bg-secondary shadow-2xl">
                 <div style={{ padding: "56.25% 0 0 0", position: "relative" }}>
-                  <iframe src="https://player.vimeo.com/video/1161526504?title=0&byline=0&portrait=0&badge=0&autopause=0&autoplay=1&muted=1&loop=1&player_id=0&app_id=58479" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerPolicy="strict-origin-when-cross-origin" style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }} title="Kingdom Of Sport - Diving" />
+                  <iframe src="https://player.vimeo.com/video/1161526504?title=0&byline=0&portrait=0&badge=0&autopause=0&autoplay=0&player_id=0&app_id=58479" frameBorder="0" allow="fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerPolicy="strict-origin-when-cross-origin" style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }} title="Kingdom Of Sport - Diving" />
                 </div>
               </div>
               <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4 sm:gap-16">
@@ -95,7 +95,7 @@ const Work = () => {
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true }} className="flex flex-col gap-4 max-w-sm">
               <div className="rounded-md overflow-hidden bg-secondary shadow-xl">
                 <div style={{ padding: "56.25% 0 0 0", position: "relative" }}>
-                  <iframe src="https://player.vimeo.com/video/1161527585?title=0&byline=0&portrait=0&badge=0&autopause=0&autoplay=1&muted=1&loop=1&player_id=0&app_id=58479" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerPolicy="strict-origin-when-cross-origin" style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }} title="Kingdom Of Sport - Swimming" />
+                  <iframe src="https://player.vimeo.com/video/1161527585?title=0&byline=0&portrait=0&badge=0&autopause=0&autoplay=0&player_id=0&app_id=58479" frameBorder="0" allow="fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerPolicy="strict-origin-when-cross-origin" style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }} title="Kingdom Of Sport - Swimming" />
                 </div>
               </div>
               <div>
@@ -108,7 +108,7 @@ const Work = () => {
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true }} className="flex flex-col gap-4">
               <div className="rounded-lg overflow-hidden bg-secondary shadow-2xl">
                 <div style={{ padding: "52.78% 0 0 0", position: "relative" }}>
-                  <iframe src="https://player.vimeo.com/video/1160737812?title=0&byline=0&portrait=0&badge=0&autopause=0&autoplay=1&muted=1&loop=1&player_id=0&app_id=58479" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerPolicy="strict-origin-when-cross-origin" style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }} title="Ali abboud - Album teaser" />
+                  <iframe src="https://player.vimeo.com/video/1160737812?title=0&byline=0&portrait=0&badge=0&autopause=0&autoplay=0&player_id=0&app_id=58479" frameBorder="0" allow="fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerPolicy="strict-origin-when-cross-origin" style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }} title="Ali abboud - Album teaser" />
                 </div>
               </div>
               <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4 sm:gap-16">
