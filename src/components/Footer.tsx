@@ -45,10 +45,10 @@ const Footer = () => {
             </h4>
             <div className="flex flex-col gap-3 text-sm text-muted-foreground">
               <a
-                href="mailto:hello@ziadnaboulsi.com"
+                href="mailto:theziadnaboulsi@gmail.com"
                 className="hover:underline underline-offset-4"
               >
-                hello@ziadnaboulsi.com
+                theziadnaboulsi@gmail.com
               </a>
               <a
                 href="https://wa.me/96170664916"
