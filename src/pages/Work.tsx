@@ -149,8 +149,14 @@ const Work = () => {
                 </p>
               </div>
             </motion.div>
+          </div>
+        </div>
+      </section>
 
-            {/* Arts and Culture Title */}
+      {/* Arts and Culture Section */}
+      <section className="py-12 lg:py-16">
+        <div className="container mx-auto px-6 lg:px-12 max-w-4xl">
+          <div className="flex flex-col gap-10 lg:gap-14">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true }} className="mb-2">
               <h2 className="font-heading text-2xl md:text-3xl font-bold">Arts and Culture</h2>
             </motion.div>
