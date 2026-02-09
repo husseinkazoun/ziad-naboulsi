@@ -229,7 +229,7 @@ const Contact = () => {
                     Instagram
                   </a>
                   <a
-                    href="https://vimeo.com/ziadnaboulsi"
+                    href="https://vimeo.com/user254016945"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-muted-foreground hover:underline underline-offset-4"
