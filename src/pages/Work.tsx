@@ -134,7 +134,7 @@ const Work = () => {
             >
               <div className={`rounded-lg overflow-hidden bg-secondary ${activeSSCVideo === "swimming" ? "shadow-2xl" : "shadow-xl"}`}>
                 <div style={{ padding: "56.25% 0 0 0", position: "relative" }}>
-                  <iframe src="https://player.vimeo.com/video/1161527585?title=0&byline=0&portrait=0&badge=0&autopause=0&autoplay=0&player_id=0&app_id=58479" frameBorder="0" allow="fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerPolicy="strict-origin-when-cross-origin" style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", pointerEvents: activeSSCVideo === "swimming" ? "auto" : "none" }} title="Kingdom Of Sport - Swimming" />
+                  <iframe src="https://player.vimeo.com/video/1161527585?title=0&byline=0&portrait=0&badge=0&autopause=0&autoplay=0&player_id=0&app_id=58479" frameBorder="0" allow="fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerPolicy="strict-origin-when-cross-origin" style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", pointerEvents: activeSSCVideo === "swimming" ? "auto" : "none" }} title="Kingdom Of Sport - Yoga & Crossfit" />
                   {activeSSCVideo !== "swimming" && (
                     <div className="absolute inset-0 z-10" />
                   )}
@@ -142,7 +142,7 @@ const Work = () => {
               </div>
               <div>
                 <h3 className={`font-heading font-bold leading-tight ${activeSSCVideo === "swimming" ? "text-2xl md:text-3xl mb-4" : "text-lg"}`}>
-                  Kingdom Of Sport - Swimming | SSC x Shahid
+                  Kingdom Of Sport - Yoga & Crossfit | SSC x Shahid
                 </h3>
                 <p className={`text-muted-foreground ${activeSSCVideo === "swimming" ? "text-base leading-relaxed" : "mt-1.5 text-xs uppercase tracking-wider"}`}>
                   {activeSSCVideo === "swimming" ? "Role: Video Editor" : "Video Editor"}
