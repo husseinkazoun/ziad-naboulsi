@@ -83,8 +83,6 @@ const Work = () => {
                 Following athletes of all levels as they share their passion, challenges, and triumphs, the docuseries explores new horizons across the dynamic landscape of Saudi sports.
               </p>
               <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
-                <span>Season 2025</span>
-                <span>·</span>
                 <span>Sports</span>
                 <span>·</span>
                 <span>Free Show</span>
