@@ -65,10 +65,10 @@ const About = () => {
           }} transition={{
             duration: 0.6,
             ease: [0.22, 1, 0.36, 1]
-          }} viewport={{
+           }} viewport={{
             once: true
-          }} className="relative aspect-[4/3] rounded-lg overflow-hidden">
-              <img src={aboutPhoto} alt="On set" className="w-full h-full object-cover" />
+          }} className="relative rounded-lg overflow-hidden">
+              <img src={aboutPhoto} alt="On set" className="w-full h-auto" />
               <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-background/20 to-transparent" />
             </motion.div>
 
