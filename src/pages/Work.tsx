@@ -70,55 +70,44 @@ const Work = () => {
 
       {/* Showreel Section */}
       <section className="py-12 lg:py-16 bg-secondary/30">
-        <div className="container mx-auto px-6 lg:px-12 max-w-4xl">
-          <div className="flex flex-col gap-6 lg:gap-8">
-            {/* Video Panel */}
-            <motion.div initial={{
-            opacity: 0,
-            scale: 0.98
-          }} whileInView={{
-            opacity: 1,
-            scale: 1
-          }} transition={{
-            duration: 0.5
-          }} viewport={{
-            once: true
-          }} className="w-full rounded-lg overflow-hidden bg-secondary shadow-2xl">
-              <div style={{
-              padding: "52.78% 0 0 0",
-              position: "relative"
-            }}>
-                <iframe src="https://player.vimeo.com/video/1160737812?title=0&byline=0&portrait=0&badge=0&autopause=0&autoplay=1&muted=1&loop=1&player_id=0&app_id=58479" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerPolicy="strict-origin-when-cross-origin" style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                width: "100%",
-                height: "100%"
-              }} title="Showreel 2024" />
+        <div className="container mx-auto px-6 lg:px-12 max-w-7xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
+            {/* Video 1 - Ali Abboud */}
+            <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true }} className="flex flex-col gap-4">
+              <div className="rounded-lg overflow-hidden bg-secondary shadow-2xl">
+                <div style={{ padding: "52.78% 0 0 0", position: "relative" }}>
+                  <iframe src="https://player.vimeo.com/video/1160737812?title=0&byline=0&portrait=0&badge=0&autopause=0&autoplay=1&muted=1&loop=1&player_id=0&app_id=58479" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerPolicy="strict-origin-when-cross-origin" style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }} title="Ali abboud - Album teaser" />
+                </div>
+              </div>
+              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4">
+                <div>
+                  <h3 className="font-heading text-xl md:text-2xl font-bold mb-2">Ali abboud- Album teaser</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">Role: Editor<br />Category: Commercial</p>
+                </div>
+                <a href="https://vimeo.com/1160737812" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-muted-foreground transition-colors group whitespace-nowrap">
+                  Watch on Vimeo
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </a>
               </div>
             </motion.div>
 
-            {/* Info Panel */}
-            <motion.div initial={{
-            opacity: 0,
-            x: 20
-          }} whileInView={{
-            opacity: 1,
-            x: 0
-          }} transition={{
-            duration: 0.5,
-            delay: 0.1
-          }} viewport={{
-            once: true
-          }} className="w-full flex flex-col sm:flex-row sm:justify-between sm:items-start gap-6 sm:gap-16">
-              <div>
-                <h3 className="font-heading text-2xl md:text-3xl font-bold mb-4">Ali abboud- Album teaser</h3>
-                <p className="text-base text-muted-foreground leading-relaxed">Role: Editor<br />Category: Commercial</p>
+            {/* Video 2 - Kingdom Of Sport */}
+            <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }} viewport={{ once: true }} className="flex flex-col gap-4">
+              <div className="rounded-lg overflow-hidden bg-secondary shadow-2xl">
+                <div style={{ padding: "56.25% 0 0 0", position: "relative" }}>
+                  <iframe src="https://player.vimeo.com/video/1161526504?title=0&byline=0&portrait=0&badge=0&autopause=0&autoplay=1&muted=1&loop=1&player_id=0&app_id=58479" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerPolicy="strict-origin-when-cross-origin" style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }} title="Kingdom Of Sport - Diving" />
+                </div>
               </div>
-              <a href="https://vimeo.com/1160737812" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-base font-medium text-foreground hover:text-muted-foreground transition-colors group whitespace-nowrap sm:mt-8">
-                Watch on Vimeo
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </a>
+              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4">
+                <div>
+                  <h3 className="font-heading text-xl md:text-2xl font-bold mb-2">Kingdom Of Sport - Diving | SSC x Shahid</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">Role: Video Editor</p>
+                </div>
+                <a href="https://vimeo.com/1161526504" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-muted-foreground transition-colors group whitespace-nowrap">
+                  Watch on Vimeo
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </a>
+              </div>
             </motion.div>
           </div>
         </div>
