@@ -150,6 +150,11 @@ const Work = () => {
               </div>
             </motion.div>
 
+            {/* Arts and Culture Title */}
+            <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true }} className="mb-2">
+              <h2 className="font-heading text-2xl md:text-3xl font-bold">Arts and Culture</h2>
+            </motion.div>
+
             {/* Video 2 - Ali Abboud */}
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true }} className="flex flex-col gap-4">
               <div className="rounded-lg overflow-hidden bg-secondary shadow-2xl">
