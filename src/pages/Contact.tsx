@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, MapPin, Phone } from "lucide-react";
 import Layout from "@/components/Layout";
@@ -15,9 +16,21 @@ import {
 } from "@/components/ui/select";
 
 const Contact = () => {
-  const handleSubmit = (e: React.FormEvent) => {
+  const [projectType, setProjectType] = useState("");
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Form submitted");
+    const form = e.currentTarget;
+    const name = (form.elements.namedItem("name") as HTMLInputElement)?.value || "";
+    const contact = (form.elements.namedItem("contact") as HTMLInputElement)?.value || "";
+    const deadline = (form.elements.namedItem("deadline") as HTMLInputElement)?.value || "";
+    const message = (form.elements.namedItem("message") as HTMLTextAreaElement)?.value || "";
+
+    const subject = encodeURIComponent(`New Inquiry${projectType ? ` – ${projectType}` : ""}`);
+    const body = encodeURIComponent(
+      `Name: ${name}\nContact: ${contact}\nProject Type: ${projectType || "Not specified"}\nDeadline: ${deadline || "Not specified"}\n\nMessage:\n${message}`
+    );
+
+    window.location.href = `mailto:theziadnaboulsi@gmail.com?subject=${subject}&body=${body}`;
   };
 
   return (
@@ -113,7 +126,7 @@ const Contact = () => {
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div className="space-y-2">
                     <Label htmlFor="project-type" className="text-xs uppercase tracking-wider text-muted-foreground">Project Type</Label>
-                    <Select>
+                    <Select value={projectType} onValueChange={setProjectType}>
                       <SelectTrigger className="bg-secondary border-border rounded-md">
                         <SelectValue placeholder="Select type" />
                       </SelectTrigger>
