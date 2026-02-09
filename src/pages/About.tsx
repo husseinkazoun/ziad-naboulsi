@@ -20,7 +20,7 @@ const About = () => {
       description: "Edited commercials, documentaries, and branded content for regional clients.",
     },
     {
-      role: "Junior Editor",
+      role: "Senior Editor",
       company: "Advert Communications",
       period: "2020 – 2021",
       description: "Started my professional journey editing social media content and corporate videos.",
