@@ -102,8 +102,8 @@ const About = () => {
                     <Film className="w-5 h-5 text-foreground" />
                   </div>
                   <div>
-                    <p className="font-heading text-sm font-semibold">10+ Years</p>
-                    <p className="text-xs text-muted-foreground mt-0.5">Editing & Directing</p>
+                    <p className="font-heading text-sm font-semibold">5+ Years</p>
+                    <p className="text-xs text-muted-foreground mt-0.5">Editing and Directing</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
