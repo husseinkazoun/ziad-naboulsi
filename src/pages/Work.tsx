@@ -14,6 +14,14 @@ import thumbTradingRoad from "@/assets/thumb-trading-road.jpg";
 import thumbSakrFurniture from "@/assets/thumb-sakr-furniture.jpg";
 import shahidLogo from "@/assets/shahid-logo.png";
 
+// Import photography stills
+import stillFruitVendor from "@/assets/still-fruit-vendor.jpg";
+import stillChairsBw from "@/assets/still-chairs-bw.jpg";
+import stillBaalbekTemple from "@/assets/still-baalbek-temple.jpg";
+import stillBaalbekDetail from "@/assets/still-baalbek-detail.jpg";
+import stillBaalbekColumns from "@/assets/still-baalbek-columns.jpg";
+import stillBaalbekRuins from "@/assets/still-baalbek-ruins.jpg";
+import stillBaalbekSky from "@/assets/still-baalbek-sky.jpg";
 
 const clientVideos = [
   { name: "Wings for Hope", vimeoId: "1160738000", thumbnail: thumbWingsForHope },
@@ -23,10 +31,21 @@ const clientVideos = [
   { name: "Sakr Furniture", vimeoId: "1160737642", thumbnail: thumbSakrFurniture },
 ];
 
+const galleryImages = [
+  { src: stillBaalbekTemple, alt: "Temple of Bacchus, Baalbek", orientation: "landscape" as const },
+  { src: stillFruitVendor, alt: "Fruit vendor, street photography", orientation: "portrait" as const },
+  { src: stillBaalbekColumns, alt: "Columns of Jupiter, Baalbek", orientation: "portrait" as const },
+  { src: stillChairsBw, alt: "Two chairs, black and white", orientation: "portrait" as const },
+  { src: stillBaalbekDetail, alt: "Carved stone detail, Baalbek", orientation: "portrait" as const },
+  { src: stillBaalbekRuins, alt: "Temple ruins, Baalbek", orientation: "portrait" as const },
+  { src: stillBaalbekSky, alt: "Columns against sky, Baalbek", orientation: "portrait" as const },
+];
+
 const Work = () => {
   const [activeClient, setActiveClient] = useState<string | null>(null);
   const [aspectRatios, setAspectRatios] = useState<Record<string, number>>({});
   const [activeSSCVideo, setActiveSSCVideo] = useState<"diving" | "swimming">("diving");
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   // Fetch aspect ratios from Vimeo oEmbed
   useEffect(() => {
@@ -233,6 +252,110 @@ const Work = () => {
           </div>
         </div>
       </section>
+
+      {/* Photography Section */}
+      <section className="py-20 lg:py-28 border-t border-border/50 bg-secondary/20">
+        <div className="container mx-auto px-6 lg:px-8 max-w-6xl">
+          <div className="mb-12 lg:mb-16">
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+              viewport={{ once: true }}
+              className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground mb-3"
+            >
+              Photography
+            </motion.p>
+            <motion.h2
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.05 }}
+              viewport={{ once: true }}
+              className="font-heading text-3xl md:text-4xl font-bold"
+            >
+              Stills
+            </motion.h2>
+          </div>
+
+          {/* Masonry Grid */}
+          <div className="columns-2 md:columns-3 gap-4 lg:gap-5 space-y-4 lg:space-y-5">
+            {galleryImages.map((image, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: index * 0.06 }}
+                viewport={{ once: true }}
+                className="break-inside-avoid cursor-pointer group"
+                onClick={() => setLightboxIndex(index)}
+              >
+                <div className="relative rounded-lg overflow-hidden bg-secondary">
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Lightbox */}
+      <AnimatePresence>
+        {lightboxIndex !== null && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm"
+            onClick={() => setLightboxIndex(null)}
+          >
+            <button
+              onClick={() => setLightboxIndex(null)}
+              className="absolute top-6 right-6 z-10 p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors"
+            >
+              <X className="w-5 h-5 text-white" />
+            </button>
+
+            {/* Previous */}
+            {lightboxIndex > 0 && (
+              <button
+                onClick={(e) => { e.stopPropagation(); setLightboxIndex(lightboxIndex - 1); }}
+                className="absolute left-4 md:left-8 z-10 p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors"
+              >
+                <ArrowRight className="w-5 h-5 text-white rotate-180" />
+              </button>
+            )}
+
+            {/* Next */}
+            {lightboxIndex < galleryImages.length - 1 && (
+              <button
+                onClick={(e) => { e.stopPropagation(); setLightboxIndex(lightboxIndex + 1); }}
+                className="absolute right-4 md:right-8 z-10 p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors"
+              >
+                <ArrowRight className="w-5 h-5 text-white" />
+              </button>
+            )}
+
+            <motion.img
+              key={lightboxIndex}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.2 }}
+              src={galleryImages[lightboxIndex].src}
+              alt={galleryImages[lightboxIndex].alt}
+              className="max-w-[90vw] max-h-[85vh] object-contain rounded-lg"
+              onClick={(e) => e.stopPropagation()}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Projects */}
       <section className="py-16 lg:py-20 border-y border-border/50 bg-secondary/20">
