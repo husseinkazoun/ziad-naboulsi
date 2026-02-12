@@ -1,9 +1,5 @@
-import thumbBrandCampaign from "@/assets/thumb-brand-campaign.jpg";
 import thumbSocialSeries from "@/assets/thumb-social-series.jpg";
-import thumbDocumentary from "@/assets/thumb-documentary.jpg";
 import thumbMusicVideo from "@/assets/thumb-music-video.jpg";
-import thumbTechLaunch from "@/assets/thumb-tech-launch.jpg";
-import thumbFashion from "@/assets/thumb-fashion.jpg";
 import thumbBroadcast from "@/assets/thumb-broadcast.jpg";
 import thumbShortFilm from "@/assets/thumb-short-film.jpg";
 import thumbCulinary from "@/assets/thumb-culinary.jpg";
@@ -66,31 +62,6 @@ export const projects: Project[] = [
     year: "2024",
     deliverables: "Music Video",
     featured: true,
-  },
-  {
-    id: "the-crow-outlet-sportswear",
-    title: "The Crow Outlet Sportswear",
-    category: "commercial",
-    thumbnail: thumbFashion,
-    videoUrl: "https://vimeo.com/1160737812",
-    vimeoId: "1160737812",
-    description: "Dynamic sportswear commercial showcasing athletic apparel. High-energy visuals with contemporary editing style.",
-    role: "Videographer / Editor",
-    year: "2024",
-    deliverables: "Commercial Spot",
-    credits: "Client: The Crow Outlet",
-  },
-  {
-    id: "trading-ad",
-    title: "Trading Ad",
-    category: "commercial",
-    thumbnail: thumbBroadcast,
-    videoUrl: "https://vimeo.com/1160738000",
-    vimeoId: "1160738000",
-    description: "Fast-paced trading platform advertisement. Sleek motion graphics and dynamic editing for fintech.",
-    role: "Video Editor",
-    year: "2024",
-    deliverables: "Commercial Spot",
   },
   {
     id: "merhbi-clothing-factory",
@@ -159,42 +130,13 @@ export const projects: Project[] = [
     credits: "Client: Milq Records",
     isVertical: true,
   },
-  {
-    id: "solo-films",
-    title: "Solo Films",
-    category: "film",
-    thumbnail: thumbShortFilm,
-    videoUrl: "https://vimeo.com/1160733719",
-    vimeoId: "1160733719",
-    description: "Collaborative film project showcasing cinematic storytelling. On-set production work spanning camera and lighting.",
-    role: "Spark / 1st Camera / Gaffer",
-    year: "2024",
-    deliverables: "Film Production",
-    credits: "Production: Solo Films",
-  },
-  {
-    id: "sakr-furniture",
-    title: "Sakr Furniture",
-    category: "commercial",
-    thumbnail: thumbCulinary,
-    videoUrl: "https://vimeo.com/1160737642",
-    vimeoId: "1160737642",
-    description: "Elegant furniture showcase highlighting craftsmanship and design. Clean visuals with attention to detail.",
-    role: "Editor",
-    year: "2024",
-    deliverables: "Commercial Spot",
-    credits: "Client: Sakr Furniture",
-  },
 ];
 
 export const clients = [
-  "The Crow Outlet",
   "Merhbi",
   "Wings for Hope",
   "SSC",
   "Milq Records",
-  "Solo Films",
-  "Sakr Furniture",
 ];
 
 export const getFeaturedProjects = () => projects.filter((p) => p.featured);
