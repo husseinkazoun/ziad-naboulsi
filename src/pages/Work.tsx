@@ -7,9 +7,6 @@ import VideoCard from "@/components/VideoCard";
 import { projects } from "@/data/projects";
 
 // Import client thumbnails
-import thumbWingsForHope from "@/assets/thumb-wings-for-hope.jpg";
-import thumbMerehbi from "@/assets/thumb-merehbi.jpg";
-import thumbCrowOutlet from "@/assets/thumb-crow-outlet.jpg";
 import thumbTradingRoad from "@/assets/thumb-trading-road.jpg";
 import thumbSakrFurniture from "@/assets/thumb-sakr-furniture.jpg";
 import shahidLogo from "@/assets/shahid-logo.png";
@@ -24,9 +21,6 @@ import stillBaalbekRuins from "@/assets/still-baalbek-ruins.jpg";
 import stillBaalbekSky from "@/assets/still-baalbek-sky.jpg";
 
 const clientVideos = [
-  { name: "Wings for Hope", vimeoId: "1160738000", thumbnail: thumbWingsForHope },
-  { name: "Merehbi Clothing Factory", vimeoId: "1160736857", thumbnail: thumbMerehbi },
-  { name: "The Crow Outlet", vimeoId: "1160735239", thumbnail: thumbCrowOutlet },
   { name: "Trading Road", vimeoId: "1160733719", thumbnail: thumbTradingRoad },
   { name: "Sakr Furniture", vimeoId: "1160737642", thumbnail: thumbSakrFurniture },
 ];
