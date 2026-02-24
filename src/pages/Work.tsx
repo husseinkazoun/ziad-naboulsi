@@ -130,6 +130,43 @@ const Work = () => {
         </div>
       </section>
 
+      {/* Documentary Section */}
+      <section className="py-12 lg:py-16">
+        <div className="container mx-auto px-6 lg:px-12 max-w-4xl">
+          <div className="flex flex-col gap-10 lg:gap-14">
+            <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true }} className="mb-2">
+              <h2 className="font-heading text-2xl md:text-3xl font-bold">Documentary</h2>
+            </motion.div>
+
+            {/* Video - المباني المهددة في طرابلس */}
+            <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true }} className="flex flex-col gap-4">
+              <div className="rounded-lg overflow-hidden bg-secondary shadow-2xl">
+                <div style={{ padding: "56.25% 0 0 0", position: "relative" }}>
+                  <iframe src="https://player.vimeo.com/video/1166257055?title=0&byline=0&portrait=0&badge=0&autopause=0&autoplay=0&player_id=0&app_id=58479" frameBorder="0" allow="fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerPolicy="strict-origin-when-cross-origin" style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }} title="المباني المهددة في طرابلس | Documentary for Raseef22" />
+                </div>
+              </div>
+              <div>
+                <h3 className="font-heading text-2xl md:text-3xl font-bold mb-4">المباني المهددة في طرابلس | Documentary for Raseef22</h3>
+                <p className="text-base text-muted-foreground leading-relaxed">Role: Video Editor</p>
+              </div>
+            </motion.div>
+
+            {/* Video - Dear Neighbor: JRS Iraq */}
+            <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true }} className="flex flex-col gap-4">
+              <div className="rounded-lg overflow-hidden bg-secondary shadow-2xl">
+                <div style={{ padding: "56.25% 0 0 0", position: "relative" }}>
+                  <iframe src="https://player.vimeo.com/video/1166261283?title=0&byline=0&portrait=0&badge=0&autopause=0&autoplay=0&player_id=0&app_id=58479" frameBorder="0" allow="fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerPolicy="strict-origin-when-cross-origin" style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }} title="Dear Neighbor: JRS Iraq" />
+                </div>
+              </div>
+              <div>
+                <h3 className="font-heading text-2xl md:text-3xl font-bold mb-4">Dear Neighbor: JRS Iraq</h3>
+                <p className="text-base text-muted-foreground leading-relaxed">Role: Video Editor</p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Arts and Culture Section */}
       <section className="py-12 lg:py-16">
         <div className="container mx-auto px-6 lg:px-12 max-w-4xl">
