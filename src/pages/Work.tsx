@@ -384,7 +384,7 @@ const Work = () => {
                     {client.name}
                   </h3>
                   <div className="rounded-lg overflow-hidden bg-secondary shadow-xl">
-                    <div style={{ padding: `${100 / (aspectRatios[client.vimeoId] || 16 / 9)}% 0 0 0`, position: "relative" }}>
+                    <div style={{ padding: `${100 / Math.max(aspectRatios[client.vimeoId] || 16 / 9, 4 / 5)}% 0 0 0`, position: "relative" }}>
                       <iframe
                         src={`https://player.vimeo.com/video/${client.vimeoId}?title=0&byline=0&portrait=0&badge=0&autopause=0&autoplay=0&player_id=0&app_id=58479`}
                         frameBorder="0"
