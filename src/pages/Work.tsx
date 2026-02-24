@@ -38,7 +38,6 @@ const galleryImages = [
 const Work = () => {
   const [activeClient, setActiveClient] = useState<string | null>(null);
   const [aspectRatios, setAspectRatios] = useState<Record<string, number>>({});
-  const [activeSSCVideo, setActiveSSCVideo] = useState<"diving" | "swimming">("diving");
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   // Fetch aspect ratios from Vimeo oEmbed
@@ -109,57 +108,22 @@ const Work = () => {
 
             {/* Video 1 - Kingdom Of Sport Diving */}
             <motion.div
-              layout
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className={`flex flex-col gap-4 cursor-pointer transition-all duration-500 ${activeSSCVideo === "diving" ? "" : "max-w-sm"}`}
-              onClick={() => setActiveSSCVideo("diving")}
+              className="flex flex-col gap-4"
             >
-              <div className={`rounded-lg overflow-hidden bg-secondary ${activeSSCVideo === "diving" ? "shadow-2xl" : "shadow-xl"}`}>
+              <div className="rounded-lg overflow-hidden bg-secondary shadow-2xl">
                 <div style={{ padding: "56.25% 0 0 0", position: "relative" }}>
-                  <iframe src="https://player.vimeo.com/video/1161526504?title=0&byline=0&portrait=0&badge=0&autopause=0&autoplay=0&player_id=0&app_id=58479" frameBorder="0" allow="fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerPolicy="strict-origin-when-cross-origin" style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", pointerEvents: activeSSCVideo === "diving" ? "auto" : "none" }} title="Kingdom Of Sport - Diving" />
-                  {activeSSCVideo !== "diving" && (
-                    <div className="absolute inset-0 z-10" />
-                  )}
+                  <iframe src="https://player.vimeo.com/video/1161526504?title=0&byline=0&portrait=0&badge=0&autopause=0&autoplay=0&player_id=0&app_id=58479" frameBorder="0" allow="fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerPolicy="strict-origin-when-cross-origin" style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }} title="Kingdom Of Sport - Diving" />
                 </div>
               </div>
               <div>
-                <h3 className={`font-heading font-bold leading-tight ${activeSSCVideo === "diving" ? "text-2xl md:text-3xl mb-4" : "text-lg"}`}>
+                <h3 className="font-heading text-2xl md:text-3xl font-bold mb-4">
                   Kingdom Of Sport - Diving | SSC x Shahid
                 </h3>
-                <p className={`text-muted-foreground ${activeSSCVideo === "diving" ? "text-base leading-relaxed" : "mt-1.5 text-xs uppercase tracking-wider"}`}>
-                  {activeSSCVideo === "diving" ? "Role: Video Editor" : "Video Editor"}
-                </p>
-              </div>
-            </motion.div>
-
-            {/* Video 1b - Kingdom Of Sport Swimming */}
-            <motion.div
-              layout
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-              className={`flex flex-col gap-4 cursor-pointer transition-all duration-500 ${activeSSCVideo === "swimming" ? "" : "max-w-sm"}`}
-              onClick={() => setActiveSSCVideo("swimming")}
-            >
-              <div className={`rounded-lg overflow-hidden bg-secondary ${activeSSCVideo === "swimming" ? "shadow-2xl" : "shadow-xl"}`}>
-                <div style={{ padding: "56.25% 0 0 0", position: "relative" }}>
-                  <iframe src="https://player.vimeo.com/video/1161527585?title=0&byline=0&portrait=0&badge=0&autopause=0&autoplay=0&player_id=0&app_id=58479" frameBorder="0" allow="fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerPolicy="strict-origin-when-cross-origin" style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", pointerEvents: activeSSCVideo === "swimming" ? "auto" : "none" }} title="Kingdom Of Sport - Yoga & Crossfit" />
-                  {activeSSCVideo !== "swimming" && (
-                    <div className="absolute inset-0 z-10" />
-                  )}
-                </div>
-              </div>
-              <div>
-                <h3 className={`font-heading font-bold leading-tight ${activeSSCVideo === "swimming" ? "text-2xl md:text-3xl mb-4" : "text-lg"}`}>
-                  Kingdom Of Sport - Yoga & Crossfit | SSC x Shahid
-                </h3>
-                <p className={`text-muted-foreground ${activeSSCVideo === "swimming" ? "text-base leading-relaxed" : "mt-1.5 text-xs uppercase tracking-wider"}`}>
-                  {activeSSCVideo === "swimming" ? "Role: Video Editor" : "Video Editor"}
-                </p>
+                <p className="text-base text-muted-foreground leading-relaxed">Role: Video Editor</p>
               </div>
             </motion.div>
           </div>
