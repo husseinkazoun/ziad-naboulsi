@@ -135,7 +135,7 @@ const Work = () => {
         <div className="container mx-auto px-6 lg:px-12 max-w-4xl">
           <div className="flex flex-col gap-10 lg:gap-14">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true }} className="mb-2">
-              <h2 className="font-heading text-2xl md:text-3xl font-bold">Documentary</h2>
+              <h2 className="font-heading text-2xl md:text-3xl font-bold">Documentaries</h2>
             </motion.div>
 
             {/* Video - المباني المهددة في طرابلس */}
@@ -147,7 +147,7 @@ const Work = () => {
               </div>
               <div>
                 <h3 className="font-heading text-2xl md:text-3xl font-bold mb-4">المباني المهددة في طرابلس | Documentary for Raseef22</h3>
-                <p className="text-base text-muted-foreground leading-relaxed">Role: Video Editor</p>
+                <p className="text-base text-muted-foreground leading-relaxed">Role: Videographer & Editor</p>
               </div>
             </motion.div>
 
