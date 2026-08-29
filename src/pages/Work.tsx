@@ -25,6 +25,12 @@ const clientVideos = [
   { name: "Merehbi Clothing Factory", vimeoId: "1160736857", thumbnail: thumbMerehbi },
 ];
 
+const instagramReels = [
+  { name: "Clipp Care", reelId: "C5ldDQtM2Pw" },
+  { name: "Arabian Combat Sports", reelId: "Db8rVVuoM2n" },
+  { name: "Blue Horizon 3", reelId: "C5ljxiiM4Vs" },
+];
+
 const galleryImages = [
   { src: stillBaalbekTemple, alt: "Temple of Bacchus, Baalbek", orientation: "landscape" as const },
   { src: stillFruitVendor, alt: "Fruit vendor, street photography", orientation: "portrait" as const },
@@ -394,6 +400,34 @@ const Work = () => {
                         title={client.name}
                       />
                     </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-8 mt-14 lg:mt-16">
+              {instagramReels.map((reel, index) => (
+                <motion.div
+                  key={reel.reelId}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="flex flex-col gap-4"
+                >
+                  <h3 className="text-xs font-heading font-medium uppercase tracking-wider text-center text-muted-foreground">
+                    {reel.name}
+                  </h3>
+                  <div className="rounded-lg overflow-hidden bg-secondary shadow-xl border border-border/50">
+                    <iframe
+                      src={`https://www.instagram.com/reel/${reel.reelId}/embed/`}
+                      title={`${reel.name} Instagram Reel`}
+                      className="block w-full h-[720px]"
+                      loading="lazy"
+                      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                      referrerPolicy="strict-origin-when-cross-origin"
+                      allowFullScreen
+                    />
                   </div>
                 </motion.div>
               ))}
